@@ -1,0 +1,35 @@
+{
+  "$schema": "https://code.claude.com/schemas/marketplace.json",
+  "name": "godesign",
+  "owner": {
+    "name": "yesitsfebreeze",
+    "url": "https://github.com/yesitsfebreeze"
+  },
+  "metadata": {
+    "description": "godesign — the design authority as a Claude Code skill",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "godesign",
+      "source": "./",
+      "description": "One design skill with an index built for agents: atomic files per topic, read on demand. Flow, space, type, colour, states, motion, forms, copy; terminal UI; the Apple lineage; the AI-slop blacklist; review passes, a ship gate and a page audit; three wearable personas.",
+      "version": "1.0.0",
+      "author": {
+        "name": "yesitsfebreeze"
+      },
+      "category": "development",
+      "keywords": [
+        "design",
+        "ux",
+        "ui",
+        "tui",
+        "design-review",
+        "typography",
+        "accessibility",
+        "design-system",
+        "personas"
+      ]
+    }
+  ]
+}

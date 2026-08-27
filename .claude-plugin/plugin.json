@@ -1,0 +1,24 @@
+{
+  "name": "godesign",
+  "version": "1.0.0",
+  "description": "The design authority as one skill — atomic wisdom per topic, indexed for agents and read on demand. Covers the work before the screen, the craft on it, the implementation underneath, terminal surfaces, the difference between correct and memorable, and how the work is judged.",
+  "author": {
+    "name": "yesitsfebreeze",
+    "url": "https://github.com/yesitsfebreeze"
+  },
+  "homepage": "https://github.com/yesitsfebreeze/godesign",
+  "repository": "https://github.com/yesitsfebreeze/godesign",
+  "license": "MIT",
+  "keywords": [
+    "design",
+    "ux",
+    "ui",
+    "tui",
+    "design-review",
+    "typography",
+    "accessibility",
+    "design-system",
+    "personas"
+  ],
+  "skills": "./skills/"
+}
