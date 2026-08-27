@@ -16,6 +16,11 @@ does not read. Decided second, after space, before everything else.
 - **Weight before size.** Two sizes and two weights beat six sizes. Reach for
   size only when weight has run out of room. At least two weights must be doing
   hierarchy work.
+- **Try scale alone before spending a second variable.** Vignelli carried
+  decades of work on four faces, often one per project, with italics and bold
+  refused outright — the whole hierarchy on gradations of scale. Before adding a
+  weight, a style or a colour, see whether one more step of the scale does it.
+  Fewer variables is fewer arguments and fewer revisions.
 - **Tracking is inverse to size.** −0.02 to −0.04em on display, 0 at body,
   +0.02 to +0.06em on small text and anything in caps. **Untracked display type
   is the most common tell of a page nobody set.** No letterspacing on running

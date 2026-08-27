@@ -33,6 +33,24 @@ Every interactive thing owes all of these:
 - Truncation is handled deliberately: `text-overflow: ellipsis`, `line-clamp`,
   or `break-words` — chosen, not defaulted.
 
+## Gestures
+
+For anything dragged, swiped or pinched:
+
+- **Lightweight things trigger during the gesture.** An overlay or a preview
+  feels natural once the swipe passes an arbitrary distance — do not make the
+  user complete it.
+- **Destructive things trigger on release, regardless of distance.** Dismissing,
+  deleting, discarding: gesture end, always. Progress is never lost by
+  overshooting.
+- **Peek without commit.** A navigation preview snaps to its final position only
+  on completion, so someone can glance at the next screen and back out.
+- **Apply the delta immediately.** A pinch scales from the current value as the
+  fingers move; it does not sit still and then animate 0 → 1 after a threshold.
+- **Keep the drag alive out of bounds.** A slider stays engaged when the pointer
+  leaves its track.
+- **Retain momentum and angle.** A thrown thing leaves the way it was thrown.
+
 ## Hard numbers
 
 ```

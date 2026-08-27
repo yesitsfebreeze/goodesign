@@ -45,6 +45,17 @@ session's own judgement. Useful for a second opinion on a decision already made.
 Say which persona is answering, and do not let the consult silently become the
 session's default.
 
+## Provenance
+
+All three carry a **Built from** list — the researched practitioners behind
+them, one named trait each, with sources. Wren takes from Rams, Vignelli,
+Bierut, Ive, Reichenstein and Hara; Ines from Zhuo, Nielsen, Norman, Saarinen
+and Eames; Ash from Kare, Moolenaar and Rocha. Nobody real is quoted, and the
+list is what keeps a claim arguable rather than mystical.
+
+The working methods those practitioners are known for are collected separately,
+as moves you can run: `process/methods.md`.
+
 ## Adding one
 
 `personas/creating.md`. A persona is built from research, never invented.

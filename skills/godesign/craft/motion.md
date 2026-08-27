@@ -37,8 +37,18 @@ Things arrive slowing down and depart speeding up.
 - **Animations are interruptible** and animate from their current value. A
   reversed gesture reverses the animation; it does not queue behind it. Use CSS
   *transitions* for interactive state, keyframes only for one-shot sequences.
-- **Frequency decides the budget.** A command palette opened fifty times a day
-  gets no animation. A rare, consequential transition can afford one.
+- **Frequency decides the budget, before taste does.** A command palette or a
+  context menu opened fifty times a day gets **no** animation at all — the
+  novelty is gone and the delay is all that remains. A rare, consequential
+  transition can afford one.
+- **Keyboard-initiated actions tolerate less motion than touch.** Pressing a key
+  feels mechanical; touching the screen feels visceral. Animate the second more
+  than the first. Where a frequent interaction still needs acknowledgement, a
+  haptic can substitute for the motion entirely.
+- **~500ms on something frequent reads as frustrating**, however well it is
+  eased. Snappy is under 300ms, and the budget shrinks as frequency rises.
+- **60fps is the floor, not the target.** A dropped frame is more noticeable
+  than a wrong curve.
 - **`prefers-reduced-motion: reduce` is a complete path**, not a fallback: the
   interface is whole and still.
 

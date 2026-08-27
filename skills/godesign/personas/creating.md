@@ -78,10 +78,13 @@ source. Provenance travels with the persona.>
 - **Behaviours, not adjectives.** "You review with the real copy at its real
   length" is a persona. "You are detail-oriented" is a horoscope.
 - **Name what they never say.** The refusals are what make a voice legible.
+- **Every persona in this skill carries a `Built from` list.** Read
+  `personas/wren-adachi.md`, `personas/ines-calder.md` and
+  `personas/ash-lindqvist.md` as the worked examples of the format — six, five
+  and four sourced practitioners respectively, one named trait each.
 - **A persona with no `Built from` section says so explicitly**, in its first
-  line — like `personas/ines-calder.md` and `personas/ash-lindqvist.md` do. An
-  unsourced composite is allowed; an unsourced composite pretending to be
-  researched is not.
+  line. An unsourced composite is allowed; an unsourced composite pretending to
+  be researched is not.
 
 ## Why a mix and not a single figure
 

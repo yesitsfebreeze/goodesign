@@ -37,6 +37,23 @@ flow is wasted work.
 8. **Run the gate before saying it is done**, and never claim it ran if it did
    not. → `process/gate.md`
 
+## The fast path — when the work is slow
+
+Design work is rarely slow because the craft is hard. It is slow because a
+decision is being deferred, a constraint was never written down, or the loop
+between changing something and seeing it is too long. Five moves fix all three:
+
+```
+1  Enumerate the constraints before designing anything.       Eames
+2  Write the smallest structural move that resolves it.       Bierut
+3  Cut the scope instead of raising the effort.               Saarinen
+4  Make something crude now, not something good later.        Ive · Scher
+5  Shorten the loop between changing it and seeing it.        Victor
+```
+
+Fifteen minutes into a design task without all five and you are dithering, not
+designing. The full set, with what each is for: `process/methods.md`.
+
 ---
 
 ## Route by task
@@ -51,6 +68,7 @@ flow is wasted work.
 | Start a project with no design system | `process/design-system.md` → `kit/defaults.md` → `voice/directions.md` |
 | Anything in a terminal | `surface/tui.md` → `surface/tui-components.md` |
 | Polish an interface that is already correct | `voice/slop.md` → `voice/commitment.md` → `polish/` |
+| The work is slow, stuck, or going in circles | `process/methods.md` |
 | Defend or challenge a claim made here | `canon.md` |
 
 ## Route by symptom
@@ -81,6 +99,10 @@ flow is wasted work.
 | Which typeface | `voice/directions.md` |
 | "Just pick a direction" | `voice/directions.md` |
 | Nothing exists yet | `kit/defaults.md` |
+| Seven findings and no idea which to fix | `process/methods.md` — the smallest structural move |
+| "Which of these ten directions?" | `process/methods.md` — the first sketch is usually the answer |
+| The gate will not pass | `process/methods.md` — cut scope before raising effort |
+| A chart, a table, any dense data | `process/methods.md` — erase non-data ink |
 
 ---
 
@@ -167,6 +189,9 @@ gate.md           The 19-line ship gate. Plus a seven-line terminal variant.
 audit.md          Ten categories, ~80 items, for a live page.
 plan-review.md    The 0–10 rating method and seven passes, before code exists.
 design-system.md  Building from nothing. The DESIGN.md shape.
+methods.md        How the best actually worked — Rams, Vignelli, Bierut,
+                  Scher, Ive, Eames, Hara, Zhuo, Nielsen, Saarinen, Victor,
+                  Tufte, Reichenstein. One move each, and what it is for.
 ```
 
 ### `kit/` and `personas/` and `canon.md`

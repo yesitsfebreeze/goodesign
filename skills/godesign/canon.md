@@ -72,6 +72,70 @@ recognisable signature of unconsidered machine output.
 (2026)](https://developers.openai.com/blog/designing-delightful-frontends-with-gpt-5-4) ·
 [UX Collective](https://uxdesign.cc/ai-design-isnt-ugly-it-s-fluent-and-that-s-the-problem-131b2f4eb78c)
 
+**Massimo Vignelli, *The Vignelli Canon*** — decades of work on four
+typefaces, hierarchy on gradations of scale with italics and bold refused, and
+the grid as generator: "five lines and seven notes allow one to make infinite
+compositions."
+[Creative Bloq](https://www.creativebloq.com/graphic-design/massimo-vignelli-61411897) ·
+[SEGD](https://segd.org/resources/vignelli-canon/)
+
+**Michael Bierut**, Pentagram — the smallest structural move that resolves the
+problem, and process documentation with the trade-offs left visible.
+[*How To*](https://www.pentagram.com/work/how-to)
+
+**Paula Scher**, Pentagram — instinctive and fast; the first sketch is usually
+the answer, and the finished work usually matches the scribble.
+[Creative Bloq](https://www.creativebloq.com/features/paula-scher-logo-sketches)
+
+**Jony Ive**, Apple — carved foam before CAD, designing and making held to be
+inseparable, a crude model as the thing that focuses a group.
+[Intense Minimalism](https://intenseminimalism.com/2012/design-is-very-much-about-designing-and-prototyping-and-making-jonathan-ive/)
+
+**Charles Eames** — design depends on the sum of all constraints, willingly
+accepted rather than compromised with.
+[Design Feast](https://designfeast.com/thoughts-on-arts-and-life/entry/charles-eames-on-constraints)
+
+**Kenya Hara**, MUJI — emptiness as receptive rather than declarative: because
+it is empty, there is a possibility for it to be filled.
+[MUJI](https://www.muji.eu/pages/muji-stories/the-art-of-simple-design.html)
+
+**Oliver Reichenstein**, iA — web design is 95% typography, because ~95% of what
+is on a screen is written language.
+[Smashing Magazine](https://www.smashingmagazine.com/2012/07/one-more-time-typography-is-the-foundation-of-web-design/)
+
+**Edward Tufte** — the data-ink ratio, chartjunk, small multiples, and the two
+erasing principles: erase non-data ink, erase redundant data ink, both within
+reason. *The Visual Display of Quantitative Information*, 1983.
+
+**Jakob Nielsen, discount usability engineering** (1989) — five users, early
+paper prototypes, heuristic evaluation. Roughly 85% of problems from five
+participants, then fix and re-test. Held with the honest caveat that the figure
+has been challenged for broad web testing.
+[NN/g](https://www.nngroup.com/articles/discount-usability-20-years/)
+
+**Karri Saarinen**, Linear — ten rules for craft at speed: the spec is the
+minimum not the goal, reduce scope to raise quality, quality is not perfection,
+there is no handoff, and data can be a crutch.
+[Figma](https://www.figma.com/blog/karri-saarinens-10-rules-for-crafting-products-that-stand-out/) ·
+[*Why is quality so rare?*](https://linear.app/now/why-is-quality-so-rare)
+
+**Bret Victor, *Inventing on Principle*** — creators need an immediate
+connection to what they create; any delay in the loop between thinking, seeing
+and building forecloses a whole world of ideas.
+[Transcript](https://jamesclear.com/great-speeches/inventing-on-principle-by-bret-victor)
+
+**Emil Kowalski**, *Animations on the Web* — under ~300ms for snappy, ease-out
+for responsiveness, 60fps as the floor, transform and opacity only, and the rule
+that keyboard-initiated and high-frequency actions should not be animated.
+[Great animations](https://emilkowal.ski/ui/great-animations) ·
+[animations.dev](https://animations.dev/)
+
+**Susan Kare**, Apple — the Macintosh icons drawn on graph paper, one square per
+pixel, 32×32: the constraint treated as the problem itself and solved from
+needlepoint, mosaics and traffic signs.
+[Smithsonian](https://www.smithsonianmag.com/innovation/how-susan-kare-designed-user-friendly-icons-for-first-macintosh-180973286/) ·
+[MoMA](https://www.moma.org/collection/works/188382)
+
 **The terminal tradition** — VT100/ANSI escape sequences, ncurses, and the
 working vocabulary of vim, tmux, mc and htop; Charm's Bubble Tea and Lip Gloss,
 and ratatui, for the modern layout-in-cells model. `surface/tui.md`.
