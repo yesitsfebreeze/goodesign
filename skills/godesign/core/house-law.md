@@ -31,6 +31,16 @@ an existing component of the same kind — the strongest precedent there is
 already says it another way. Two ways to do one thing is a bug, and one that
 spreads.
 
+## Express the fix in the project's own system
+
+Before writing a fix, identify the styling system in force — Tailwind, plain
+CSS, the established CSS-in-JS — and write the change in that system. **Never
+introduce a second styling system to apply a polish fix.** Likewise never
+introduce a typeface, paid or free, to satisfy a polish checklist: font
+smoothing, wrapping and tabular figures are rendering details and do not
+override the product's chosen family. A type change is a decision, made
+in `craft/type.md`, not a side effect.
+
 ## Reaching for the role, never the pigment
 
 Wherever the house has tokens, use them. `--text-body`, `--surface-page`,

@@ -2,11 +2,17 @@
 
 **Read when:** any control is visually smaller than 40px.
 
+**This file is the single source for target sizes.** Other files point here.
+
 ```
-Minimum         24×24 CSS px      WCAG 2.2 AA, 2.5.8 Target Size (Minimum)
-Touch           44×44
-Practical floor 40×40             for anything a finger or a hurried cursor finds
+24×24 CSS px    the legal floor — WCAG 2.2 AA, 2.5.8 Target Size (Minimum).
+                Passing it is not the same as being easy to hit.
+40×40           dense desktop interfaces — the working minimum
+44×44           touch and mobile — the default everywhere a finger is possible
 ```
+
+When in doubt, 44. Choose 40 only in a dense desktop surface where 44 would
+break the rhythm, and say so.
 
 **The hit area may exceed the visual area.** A 20×20 checkbox is fine; a 20×20
 *target* is not. Extend it with a pseudo-element, which costs no layout.
@@ -17,12 +23,12 @@ Practical floor 40×40             for anything a finger or a hurried cursor fin
   content: "";
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
 }
 ```
 
 ```tsx
-<button className="relative size-5 after:absolute after:top-1/2 after:left-1/2 after:size-10 after:-translate-1/2">
+<button className="relative size-5 after:absolute after:top-1/2 after:left-1/2 after:size-11 after:-translate-1/2">
   <CheckIcon />
 </button>
 ```

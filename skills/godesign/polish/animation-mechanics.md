@@ -22,9 +22,14 @@ first.
 
 ## Enter — split and stagger
 
-Never animate one large container. Split into semantic chunks (title,
-description, actions), stagger ~100ms apart, and combine `opacity`,
-`translateY` and `blur`. For a title, splitting into words at ~80ms is an option.
+For an **infrequent staged entrance** where sequence communicates hierarchy —
+the first load of a hero, a success state, an empty state — never animate one
+large container. Split into semantic chunks (title, description, actions),
+stagger ~100ms apart, and combine `opacity`, `translateY` and `blur`. For a
+title, splitting into words at ~80ms is an option.
+
+**Never stagger a routine interaction** — row hovers, keystrokes, repeated tab
+changes. See *Motion restraint* in `craft/motion.md`.
 
 ```css
 .stagger-item {
@@ -58,6 +63,12 @@ The user's attention is already moving on. Do not fight for it.
 - Never `display: none` with no transition — that is a vanish, not an exit.
 - Full slide-out only when spatial context genuinely matters (a card returning
   to a list, a drawer closing).
+- **Sometimes the right exit is none.** Remove immediately when the motion adds
+  no information, the interaction repeats frequently, or reduced motion is
+  requested.
+- Exits use `ease-out`, like entrances, and are shorter — settled in
+  `craft/motion.md`. An accelerating `ease-in` exit is reserved for something
+  leaving under its own momentum, under 200ms.
 
 ## Contextual icon swaps
 
@@ -71,8 +82,11 @@ filter      blur(4px) → blur(0px)
 transition  { type: "spring", duration: 0.3, bounce: 0 }   bounce is ALWAYS 0
 ```
 
-Check `package.json` for `motion` / `framer-motion`. If present, use
-`AnimatePresence mode="popLayout"`. **If not, do not add the dependency** —
+Check `package.json`. Import from `"motion/react"` when `motion` is installed,
+from `"framer-motion"` when that is. If both exist, follow the imports the
+component or its nearest peers already use — **never mix one package with the
+other's import path.** If present, use `AnimatePresence mode="popLayout"`.
+**If neither is installed, do not add the dependency** —
 keep both icons in the DOM, one absolutely positioned, and cross-fade with CSS
 transitions on `cubic-bezier(0.2, 0, 0, 1)`. Neither icon unmounts, so both
 enter and exit animate.

@@ -80,8 +80,8 @@ source. Provenance travels with the persona.>
 - **Name what they never say.** The refusals are what make a voice legible.
 - **Every persona in this skill carries a `Built from` list.** Read
   `personas/wren-adachi.md`, `personas/ines-calder.md` and
-  `personas/ash-lindqvist.md` as the worked examples of the format — six, five
-  and four sourced practitioners respectively, one named trait each.
+  `personas/ash-lindqvist.md` and `personas/rio-castellanos.md` as the worked
+  examples of the format — one named trait per sourced practitioner.
 - **A persona with no `Built from` section says so explicitly**, in its first
   line. An unsourced composite is allowed; an unsourced composite pretending to
   be researched is not.

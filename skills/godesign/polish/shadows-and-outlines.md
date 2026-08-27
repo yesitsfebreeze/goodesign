@@ -41,8 +41,13 @@ invisible on a dark ground.
 .card:hover { box-shadow: var(--shadow-border-hover); }
 ```
 
-**Do not apply this to dividers** — `border-b`, `border-t`, side borders. A
-border whose job is separation stays a border.
+**Shadows for elevation, borders for structure.** Replace only a border whose
+job was to fake depth. Keep every border that communicates structure or state:
+dividers, layout separators, table cells, input outlines, and selected or focus
+rings.
+
+`oklch(0 0 0 / 0.06)` and `rgba(0, 0, 0, 0.06)` are interchangeable here; use
+whichever the project already speaks.
 
 ## Image outlines
 
@@ -51,8 +56,8 @@ shadowed elements.
 
 ### Colour rules — non-negotiable
 
-- **Light mode:** pure black, `rgba(0, 0, 0, 0.1)`. Exactly R=0 G=0 B=0.
-- **Dark mode:** pure white, `rgba(255, 255, 255, 0.1)`.
+- **Light mode:** pure black — `rgba(0, 0, 0, 0.1)` or `oklch(0 0 0 / 0.1)`.
+- **Dark mode:** pure white — `rgba(255, 255, 255, 0.1)` or `oklch(1 0 0 / 0.1)`.
 - **Never a near-black or near-white from the palette** — no slate-900,
   zinc-900, `#0a0a0a`, `#111827`, `#f5f5f7`. A tinted outline picks up the
   surface colour underneath and reads as dirt on the image edge.

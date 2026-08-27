@@ -60,9 +60,14 @@ designing. The full set, with what each is for: `process/methods.md`.
 
 | The task | Read, in this order |
 |---|---|
-| Build a page or component | `core/contract.md` → `craft/space.md` → `craft/type.md` → `craft/states.md` → `process/gate.md` |
+| **Create a component** — "create a button" | `process/component.md` — search the tree, search the system, compose, never trace |
+| Build a page | `core/contract.md` → `craft/space.md` → `craft/type.md` → `craft/states.md` → `process/gate.md` |
+| Not sure which workflow this is | `process/workflows.md` |
 | Design a flow or a multi-step task | `flow/flow.md` → `flow/failure.md` → `flow/time.md` |
 | Review an existing design | `process/review.md` → the level that fails |
+| Verify, not eyeball — the grep-able checks | `process/lint.md` |
+| The repo has a `components.json` | `surface/shadcn.md` |
+| Add or fix motion — "animate this", "feels janky" | `craft/motion.md` → `craft/motion-catalogue.md` → `polish/animation-mechanics.md` |
 | Audit a live page in depth | `process/audit.md` |
 | Review a plan or PRD before building | `process/plan-review.md` |
 | Start a project with no design system | `process/design-system.md` → `kit/defaults.md` → `voice/directions.md` |
@@ -83,10 +88,15 @@ designing. The full set, with what each is for: `process/methods.md`.
 | Hierarchy does not read | `craft/space.md` → `craft/type.md` (weight before size) |
 | Nested rounded things look broken | `polish/radius-and-optics.md` |
 | An icon looks off-centre | `polish/radius-and-optics.md` |
+| Icons look too light or too heavy next to text | `polish/icons.md` |
+| Icon states, RTL, one SVG per state | `polish/icons.md` |
 | Numbers jitter as they update | `polish/text-rendering.md` |
 | A heading orphans one word | `polish/text-rendering.md` |
 | Animation feels janky or snaps | `polish/animation-mechanics.md` |
 | Animation is noticeable | `craft/motion.md` — if you notice it, it is too long |
+| Which effect, with what numbers | `craft/motion-catalogue.md` |
+| A popover scales from the wrong place | `craft/motion-catalogue.md` — origin-aware |
+| "Which registry / does shadcn have this" | `surface/shadcn.md` |
 | Contrast, focus rings, target sizes | `craft/colour.md`, `craft/states.md`, `polish/hit-areas.md` |
 | "Should this be a card?" | `surface/landing-vs-app.md` |
 | Empty state, first run, onboarding | `flow/first-run.md` |
@@ -139,8 +149,12 @@ shape-and-depth.md  Concentric radii · one radius language · two elevations ·
                  the cost of every shadow, gradient and border.
 states.md        hover/focus/active/disabled/loading · empty/error/partial ·
                  one item and twelve · targets and timings.
-motion.md        Explains a relationship or it does not ship. Durations,
-                 easings, transform-and-opacity only, reduced motion.
+motion.md        Whether, by frequency. Durations, the easing decision (exits
+                 settled: ease-out, shorter), custom curves, personality,
+                 restraint.
+motion-catalogue.md  Every effect with its numbers: entrances, exits, press,
+                 hover, feedback, stagger, sequences, clip-path, gestures,
+                 ambient, page transitions, blur as a bridge, debugging.
 responsive.md    Small first, then the awkward middle. What must never happen.
 forms.md         Keyboard-complete · labels visible · validate on blur ·
                  autocomplete/inputmode/type · URL as state.
@@ -158,7 +172,10 @@ animation-mechanics.md  Transitions vs keyframes · stagger · exits · icon
                         swaps · scale(0.96) on press.
 performance.md          Never `transition: all` · will-change sparingly ·
                         LCP and CLS budgets.
-hit-areas.md            24 / 40 / 44px, pseudo-element extension, no overlaps.
+hit-areas.md            44 touch · 40 dense desktop · 24 legal floor. The one
+                        source for the numbers. Pseudo-element extension.
+icons.md                Stroke matched to text weight · currentColor · outline
+                        default, fill active · render size · RTL flip table.
 ```
 
 ### `surface/` — where the rules change
@@ -169,6 +186,8 @@ tui-components.md   Box drawing, overlays, scroll, status bar, keys, routing.
 apple.md            Clarity, deference, depth — what transfers, and what to
                     leave on the platform.
 landing-vs-app.md   Classify first. Two rule sets, hard rejections, litmus.
+shadcn.md           The system's grammar: tokens, cva, cn, asChild, data-slot,
+                    the always-enforced rules, the five styles, the workflow.
 ```
 
 ### `voice/` — correct is the floor; this is the difference
@@ -183,6 +202,13 @@ directions.md   Ten aesthetic directions · decoration/layout/colour/motion
 
 ### `process/` — how the work is judged
 ```
+component.md      "Create a button." Read the tree → the system → the grammar →
+                  decide → compose, never trace → states → gate. The method.
+workflows.md      Which workflow you are in — new component, page, flow,
+                  redesign, review, plan, system, motion, design-to-code,
+                  deslop, reverse-engineer, terminal — and its read order.
+lint.md           The mechanical checks. Anti-patterns, required attributes,
+                  copy, type, spacing, motion, performance — each grep-able.
 review.md         The nine-level review pass, in the order a person meets the
                   product. Seven findings maximum, each with a file and number.
 gate.md           The 19-line ship gate. Plus a seven-line terminal variant.
@@ -198,7 +224,7 @@ methods.md        How the best actually worked — Rams, Vignelli, Bierut,
 ```
 kit/defaults.md       The starting system — space, type, colour, motion, shape.
                       Replace any value with a reason, none by accident.
-personas/index.md     Who is working: lead · ux · tui. How to choose.
+personas/index.md     Who is working: lead · ux · motion · tui. How to choose.
 personas/creating.md  Building a new one from research — the mix, and the
                       books of persons. Never invented.
 canon.md              Every claim in this skill, traced to its source.

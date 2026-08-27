@@ -15,8 +15,8 @@ Radius    one language; nested = outer − padding
 Border    1px, one subtle role; a second border colour needs an argument
 Elevation two levels, maximum
 Duration  120 micro · 200 enter · 140 exit
-Easing    in  cubic-bezier(0.2, 0, 0, 1)
-          out cubic-bezier(0.4, 0, 1, 1)
+Easing    ease-out   cubic-bezier(0.23, 1, 0.32, 1)   enter AND exit; exit shorter
+          in-out     cubic-bezier(0.77, 0, 0.175, 1)  on-screen movement
 Contrast  text 4.5:1 · large 3:1 · UI and focus ring 3:1 both sides
 Targets   24px minimum · 44px touch
 ```
@@ -48,8 +48,8 @@ Targets   24px minimum · 44px touch
 
   /* motion */
   --dur-micro: 120ms; --dur-enter: 200ms; --dur-exit: 140ms;
-  --ease-in:  cubic-bezier(0.2, 0, 0, 1);
-  --ease-out: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 ```
 

@@ -54,8 +54,8 @@ For anything dragged, swiped or pinched:
 ## Hard numbers
 
 ```
-Hit target      ≥ 24×24 CSS px always      (WCAG 2.2 AA, 2.5.8)
-                ≥ 44×44 on touch
+Hit target      44×44 touch · 40×40 dense desktop · 24×24 is only the legal
+                floor — the numbers live in polish/hit-areas.md
 Hit area may exceed the visual area — pad it, or grow it with a pseudo-element.
 Two hit areas must never overlap.
 

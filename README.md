@@ -4,7 +4,7 @@ One design skill for Claude Code. **Atomic wisdom per topic, indexed for agents,
 read on demand.**
 
 Most design skills are one long file an agent either loads entirely or ignores
-entirely. This one is 44 files. `SKILL.md` is the only page that always loads —
+entirely. This one is fifty-odd files. `SKILL.md` is the only page that always loads —
 190 lines of routing — and every other file is self-contained, opens with a
 **Read when** line, and is pulled in only when the task actually needs it.
 
@@ -46,20 +46,31 @@ core/       3   the contract (job · brief · build · gate), the nine beliefs,
                 and the rule that the repo's own design law outranks all of it
 flow/       6   the work before the screen — flow, failure, time, information
                 architecture, first run, and labelling what you assumed
-craft/      9   space · type · colour · shape · states · motion · responsive ·
-                forms · content. Defaults with reasons, not preferences
-polish/     6   the implementation underneath — concentric radius, layered
-                shadows, text-wrap, animation mechanics, will-change, hit areas
-surface/    4   terminal UI (the cell grid, ANSI by role, 80×24), the Apple
-                lineage, and the landing-vs-app classifier
+craft/     10   space · type · colour · shape · states · motion · the motion
+                catalogue · responsive · forms · content. Defaults with reasons
+polish/     7   the implementation underneath — concentric radius, layered
+                shadows, text-wrap, animation mechanics, will-change, hit areas,
+                icons
+surface/    5   terminal UI (the cell grid, ANSI by role, 80×24), the Apple
+                lineage, the landing-vs-app classifier, and shadcn's grammar
 voice/      3   the ten-pattern slop blacklist, the moves that answer it, and
                 ten aesthetic directions with faces by purpose
-process/    5   the review pass, the 19-line ship gate, an ~80-item page audit,
-                plan review before code exists, and building a system from zero
+process/    9   the component method, the workflows, the mechanical lint, the
+                review pass, the ship gate, the page audit, plan review, building
+                a system from zero, and how the best actually worked
 kit/        1   the starting system as tokens
 personas/   5   who is working — and how to build a new one from research
 canon.md        every claim traced to its source
 ```
+
+## "Create a button"
+
+The method the skill is built around. Told to create a component, the designer
+it wears does not produce *a* button — it reads every button already in the
+tree, finds which variant is the house voice, checks what the system ships,
+understands the grammar (tokens, `cva`, `cn`, `asChild`, `data-slot`), decides
+the one thing this component gets to decide, and composes it from the system.
+It never traces one from a screenshot. `process/component.md`.
 
 ## Personas
 
@@ -70,6 +81,7 @@ the length of the task you are one.
 |---|---|---|
 | `lead` | Wren Adachi | design lead — product & UI, the Apple lineage. **Default.** |
 | `ux` | Ines Calder | product/design engineer — the path through the system |
+| `motion` | Rio Castellanos | motion designer — the passage between states, and whether it should exist |
 | `tui` | Ash Lindqvist | terminal interface designer — the cell grid and the keyboard |
 
 All three are composites. Each says so in its own first line, and

@@ -29,6 +29,12 @@ is wasted work, and so is a flow fix on a screen answering the wrong job.
                    second way to say the same thing?        → core/house-law.md
 ```
 
+## Slow it down
+
+When motion is involved, **replay it at 10% speed** in the browser's Animations
+panel and walk every state — hover, focus, active, loading, empty. What feels
+off at 10% is what is subtly wrong at full speed.
+
 ## Where the heuristics land
 
 Against **Nielsen's ten heuristics**, levels 0 and 5 carry most of them: system
@@ -60,10 +66,48 @@ each finding rated high / medium / polish.
 
 Use `process/plan-review.md` — the 0–10 rating method and seven passes.
 
-## Reporting a fix set
+## The report
 
-When you have changed things rather than only found them, present the changes
-as a markdown table with **Before** and **After** columns, grouped by principle
-under a heading. Every change, not a subset — one row per diff so the reader can
-scan it. Omit a principle's table entirely if nothing changed under it; empty
-tables are noise.
+**Scope first.** State the mode, the exact scope, the framework and styling
+conventions, and any boundary. Then show what was actually inspected:
+
+| Category | Evidence inspected | Result |
+|---|---|---|
+| Space | files, components, states, or checks run | findings count · `Clear` · `Not reviewed` — with a reason |
+
+**Never imply an uninspected surface was reviewed.**
+
+**Findings** — one table per principle, every change made or proposed, one row
+per diff. A repeated systemic issue is one row listing every location.
+
+| Severity | Location | Before | After | Why |
+|---|---|---|---|---|
+| MEDIUM | `src/Counter.tsx:17` | `<span>{count}</span>` | `<span className="tabular-nums">` | proportional digits shift as the value changes |
+
+```
+HIGH     makes an interaction inaccessible, misleading, unreadable, or
+         repeatedly disruptive
+MEDIUM   a noticeable usability or consistency problem
+LOW      isolated polish — reported only in a full review
+```
+
+Location is `path/to/file:line`; with no source, the exact screen and
+component. *Why* names the principle and the user impact. Omit a principle's
+table if nothing was found. Never pad to a count.
+
+**Considered but rejected** — one to five real candidates and why they did not
+make the list. Do not invent filler; if there are fewer, say so.
+
+| Location | Candidate | Rejected because |
+|---|---|---|
+| `src/Card.tsx:28` | increase the shadow | depth already matches the shared surface token; changing one card reduces consistency |
+
+**Verification** — the exact commands or interactions run, and what was
+observed. Any check not run is labelled **Not verified**, with what remains.
+
+**Verdict** — `Block` if any HIGH remains · `Needs changes` if only MEDIUM or
+LOW remain · `Approve` only with no actionable finding. List every unverified
+check beside the verdict.
+
+With no findings: say "No actionable findings", still report verification and
+the rejected candidates, and end with `Approve`.

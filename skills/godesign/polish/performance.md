@@ -5,10 +5,13 @@ defects.
 
 ## Transition only what changes
 
-**Never `transition: all`** — nor Tailwind's bare `transition`, which maps to
-`transition-property: all`. It forces the browser to watch every property,
-triggers transitions you did not intend (colours, padding, shadows), and blocks
-optimisation.
+**Never `transition: all`**, and never Tailwind's `transition-all`. It forces
+the browser to watch every property, triggers transitions you did not intend
+(colours, padding, shadows), and blocks optimisation.
+
+(Tailwind's *bare* `transition` maps to a curated list — colours, opacity,
+shadow, transforms — not to `all`. It is tolerable; naming exactly what changes
+is still better.)
 
 ```css
 /* Good */ .button { transition-property: scale, background-color;
@@ -20,7 +23,7 @@ optimisation.
 // Good — explicit
 <button className="transition-[scale,background-color] duration-150 ease-out">
 // Bad
-<button className="transition duration-150 ease-out">
+<button className="transition-all duration-150 ease-out">
 ```
 
 Tailwind's `transition-transform` covers `transform, translate, scale, rotate` —
@@ -44,7 +47,7 @@ when the animation starts. Each extra layer costs memory.
 | `transform` | yes | yes |
 | `opacity` | yes | yes |
 | `filter` (blur, brightness) | yes | yes |
-| `clip-path` | yes | yes |
+| `clip-path` | newer Chromium only | rarely — not reliable cross-browser |
 | `top`, `left`, `width`, `height` | no | no |
 | `background`, `border`, `color` | no | no |
 

@@ -130,6 +130,56 @@ that keyboard-initiated and high-frequency actions should not be animated.
 [Great animations](https://emilkowal.ski/ui/great-animations) ·
 [animations.dev](https://animations.dev/)
 
+**Jakub Krehel, *make-interfaces-feel-better*** (MIT) — the whole of
+`polish/` descends from this skill and its article: concentric radius, optical
+alignment, layered shadow-as-border, image outlines, split-and-stagger, subtle
+exits, the exact icon cross-fade values, scale(0.96), the 10%-speed review, and
+the Severity/Before/After/Why report with a verdict.
+[GitHub](https://github.com/jakubkrehel/make-interfaces-feel-better) ·
+[Article](https://jakub.kr/writing/details-that-make-interfaces-feel-better)
+
+**Emil Kowalski's design-engineering skill** (vercel-labs/open-agents,
+`emil-design-eng`) — the animation decision framework by frequency, the strong
+custom curves, never `scale(0)`, origin-aware popovers, instant subsequent
+tooltips, blur as a bridge, `@starting-style`, the `clip-path` recipes, the
+gesture physics (velocity 0.11, damping, pointer capture), and the Sonner
+principles. Much of `craft/motion-catalogue.md` and the easing settlement in
+`craft/motion.md` descend from it.
+[open-agents](https://github.com/vercel-labs/open-agents)
+
+**LottieFiles, *motion-design-skill*** (MIT) — the four personalities and
+their numbers, the duration and weight tables, the entrance/exit strategies,
+the stagger budgets, coordinated sequences, ambient limits, the 1/3 rules, and
+Disney's twelve principles adapted for UI.
+[GitHub](https://github.com/LottieFiles/motion-design-skill)
+
+**shadcn/ui, the official skill** — the four principles, the token grammar,
+the always-enforced rules, the component selection table and the CLI workflow
+in `surface/shadcn.md`. **mattbx/shadcn-skills** for the five styles, the
+registry map and the search strategy.
+[shadcn](https://github.com/shadcn-ui/ui/blob/main/skills/shadcn/SKILL.md) ·
+[mattbx](https://github.com/mattbx/shadcn-skills)
+
+**Vercel, *Web Interface Guidelines*** — the mechanical rule set behind
+`process/lint.md`: accessibility, focus, forms, animation, typography, content
+handling, images, performance, navigation state, touch, safe areas, dark mode,
+i18n, hydration, and the anti-pattern list.
+[vercel.com/design/guidelines](https://vercel.com/design/guidelines) ·
+[command.md](https://github.com/vercel-labs/web-interface-guidelines)
+
+**Val Head**, *Designing Interface Animation* (2016) — interactive animation
+needs its own behavioural rules beyond the classic principles; motion for
+feedback, orientation, attention, causality and brand.
+[Rosenfeld Media](https://rosenfeldmedia.com/books/designing-interface-animation/)
+
+**Pasquale D'Silva**, *Transitional Interfaces* (2013) — static design gives no
+context between states; the transition is the information.
+[Medium](https://medium.com/@pasql/transitional-interfaces-926eb80d64e3)
+
+**Frank Thomas and Ollie Johnston**, *The Illusion of Life* (1981) — the twelve
+principles, from the Disney studio of the 1930s.
+[Wikipedia](https://en.wikipedia.org/wiki/Twelve_basic_principles_of_animation)
+
 **Susan Kare**, Apple — the Macintosh icons drawn on graph paper, one square per
 pixel, 32×32: the constraint treated as the problem itself and solved from
 needlepoint, mosaics and traffic signs.

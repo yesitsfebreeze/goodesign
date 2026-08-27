@@ -2,9 +2,28 @@
 
 **Read when:** before saying anything is done. Every time.
 
-Report every line as **pass** or **fail (what, where)**. Fix or explain each
-fail. **Do not report a line you did not check, and never claim the gate ran if
-it did not.**
+Report every line with one of four labels:
+
+```
+pass (verified)    a command was run or a measurement taken — say which
+pass (inspected)   looked at it and judged it — say what was looked at
+fail (what, where) named, and fixed or explained
+not verified       could not check — say what remains
+```
+
+A line without a label was not run. **Never claim the gate ran if it did not**;
+a gate reported as eighteen bare passes is a gate that did not run.
+
+Cheap verifications that turn *inspected* into *verified*:
+
+```
+2  Scale     grep -rnoE '[0-9]+px' src/styles | grep -vE '\b(4|8|12|16|24|32|48|64|96|128|160)px'
+6  Colour    a contrast check on every text/ground pair actually in the tokens
+8  States    grep -rn 'outline: *none' — each hit needs a replacement ring
+11 Motion    grep -rnE 'transition(-property)?: *all|transition-all'
+12 Reduced   grep -rn 'prefers-reduced-motion' — zero hits is a fail, not a pass
+14 Widths    the four widths, actually opened
+```
 
 ```
 0a Job          The stated job is done in the fewest honest steps
