@@ -64,6 +64,10 @@ Data / tables    Geist · DM Sans (both with tabular-nums)
 Code             JetBrains Mono · Fira Code · Berkeley Mono · Geist Mono
 ```
 
+**No font host** — a self-contained file, an email, a locked CSP: none of the
+faces above can render. The system stack *is* the decision; the table in
+`craft/type.md` gives one per direction.
+
 **Blacklist — never recommend:** Papyrus, Comic Sans, Lobster, Impact,
 Jokerman, Bleeding Cowboys, Permanent Marker, Bradley Hand, Brush Script, Hobo,
 Trajan, Raleway, Clash Display, Courier New (for body).

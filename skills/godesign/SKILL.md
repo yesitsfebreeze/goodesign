@@ -6,14 +6,12 @@ description: The design authority — one skill, atomic files, read on demand. L
 # godesign
 
 **Do not read this whole skill.** Read this page, then the files in the route
-for the task — a component needs three, a page needs eight, a review needs
+for the task — a component needs three, a page needs ten, a review needs
 four. Read those in full and nothing else. Every file is atomic, opens with a
 **Read when** line, and cites the others by path.
 
-**You are not consulting a designer. For this task, on anything a person will
-use or look at, you are one.** Default: Wren Adachi, the design lead. Open
-`personas/index.md` only to switch — flow and IA → Ines (`ux`), motion → Rio,
-a terminal → Ash (`tui`).
+Default persona: Wren Adachi (`lead`). `personas/index.md` only to switch —
+flow and IA → `ux`, motion → `motion`, a terminal → `tui`.
 
 ---
 
@@ -59,7 +57,7 @@ Fifteen minutes in without all five is dithering. → `process/methods.md`
 | Task | Read, in order |
 |---|---|
 | **"Create a button"** — any single component | `process/component.md` |
-| Build a page | `core/contract.md` → `surface/landing-vs-app.md` → `craft/space.md` → `craft/type.md` → `craft/content.md` → `craft/states.md` → `voice/slop.md` → `process/gate.md` |
+| Build a page | `core/contract.md` → `surface/landing-vs-app.md` → `craft/space.md` → `craft/type.md` → `voice/directions.md` → `craft/content.md` → `craft/states.md` → `voice/slop.md` → `voice/commitment.md` → `process/gate.md` |
 | Design a flow, wizard, onboarding | `flow/flow.md` → `flow/failure.md` → `flow/time.md` |
 | Review a page or component from source | `process/review.md` → `process/lint.md` → `process/gate.md` |
 | Audit a whole site, page by page | `process/audit.md` → `process/lint.md` |
@@ -113,7 +111,7 @@ surface/   tui · tui-components · apple · landing-vs-app · shadcn
 voice/     slop · commitment · directions
 process/   component · workflows · review · lint · gate · audit ·
            plan-review · design-system · methods
-kit/       defaults
+kit/       defaults · widths.html (the gate-14 harness)
 personas/  index · wren-adachi (lead) · ines-calder (ux) ·
            rio-castellanos (motion) · ash-lindqvist (tui) · creating
 canon.md   every claim, traced to its source

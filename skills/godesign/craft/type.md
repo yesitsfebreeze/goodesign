@@ -58,6 +58,22 @@ wish and **the fallback stack is the type decision.** Choose it as such —
 stack you expect to render into the brief's `Type:` line, and check the page
 in what actually renders, not in what you named.
 
+Installed faces, by direction — macOS · Windows · Linux, in that order:
+
+```
+humanist sans     Avenir Next · Segoe UI · Cantarell        the tasteful default —
+                                                            a knowing choice, not a reflex
+grotesk           Helvetica Neue · Arial · Liberation Sans  neutral; the overused one
+geometric-ish     Gill Sans · Segoe UI · Cantarell
+text serif        Iowan Old Style · Charter · Georgia       editorial, long reading
+transitional      Baskerville · Georgia · Liberation Serif
+slab / display    Rockwell · Rockwell · DejaVu Serif
+mono              SF Mono · Consolas · DejaVu Sans Mono     figures, times, code
+```
+
+Two families, one of them possibly mono. If the same stack would serve a
+techno label and a tax adviser, it was not chosen for this brief.
+
 ## Choosing a face
 
 See `voice/directions.md` for recommendations by purpose, the blacklist, and

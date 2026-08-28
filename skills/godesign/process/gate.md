@@ -25,19 +25,25 @@ house's style directory and the house's own `--space-*` values:
 
 ```
 2  Scale     perl -0777 -pe 's{/\*.*?\*/}{}gs' <style files> \
-               | grep -nE '(margin|padding|gap|inset|top|right|bottom|left)[^;{]*\b[0-9]+px' \
-               | grep -vE '^\s*--' | grep -vE '\b(4|8|12|16|24|32|48|64|96|128|160)px'
-             — gaps only; font sizes, breakpoints, hairlines and rings are not gaps,
-               and the token definitions the scale is made of are excluded
+               | grep -nE '(^|[^-])\b(margin|padding|gap|row-gap|column-gap|inset)[a-z-]*\s*:[^;{]*' \
+               | grep -oE '(^|[^-])\b(margin|padding|gap|row-gap|column-gap|inset)[a-z-]*\s*:[^;{]*' \
+               | grep -E '\-?[0-9.]+(px|rem|em)' \
+               | grep -vE '(^|[^0-9.])(4|8|12|16|24|32|48|64|96|128|160)px'
+             — gaps only, in any unit; a negative value is on the scale only if its
+               absolute value is; font sizes, breakpoints, rings and offsets are not
+               gaps, and the token definitions the scale is made of are excluded
 6  Colour    compute the ratio for every text/ground pair in the tokens; reading a
              ratio someone wrote in a comment is inspected, not verified
 8  States    grep -rnE 'outline: *none|outline-none' — each hit needs a replacement ring
 11 Motion    grep -rnE 'transition(-property)?: *all|transition-all'
 12 Reduced   grep -rn 'prefers-reduced-motion' — zero hits is a fail, not a pass
-14 Widths    load the built page in a headless browser and measure with
-             getBoundingClientRect / getComputedStyle at 360 · 768 · 900 · 1440.
-             Chrome will not shrink a window below ~500px — use device emulation
-             or an iframe of the exact width, or the 360 result is a lie.
+14 Widths    `kit/widths.html` — copy it next to the page and run
+             chrome --headless=new --allow-file-access-from-files \
+               --virtual-time-budget=6000 --dump-dom "file://$PWD/widths.html?page=index.html"
+             It iframes the page at 360 · 768 · 900 · 1440 (Chrome will not shrink
+             a window below ~500px, so a bare 360 screenshot is a lie), and reports
+             horizontal scroll, every overflowing element, heading widows (line 5),
+             and computed type sizes (line 4).
 ```
 
 ## The repo's own gate, when it mutates
@@ -51,6 +57,7 @@ gate as *partial*** — never as run.
 0b States       Entry, empty, partial, slow, failed, returning — all designed
 0c Failure      Every error says what to do; nothing destructive without undo
 0d Work         No typed input is ever lost; position preserved on return
+                (0b–0d are app lines; a static page reports not applicable)
 0e Time         Feedback <100ms · no spinner <300ms · skeleton only >1s
 1  Message      One idea, received in the stated order
 2  Scale        Every gap on the spacing scale; no off-scale value
@@ -71,7 +78,8 @@ gate as *partial*** — never as run.
 15 Consistency  Nothing invented that the tree already says another way
 16 Tells        None of the generic-default tells present without an argument
 17 Subtraction  One more thing removed, and the last removal put back
-18 Honesty      Assumptions labelled as assumptions; the disproof named
+18 Honesty      Assumptions labelled as assumptions; the disproof named;
+                invented product facts in ONE list: "assumed: …" — craft/content.md
 ```
 
 ## Terminal surfaces
