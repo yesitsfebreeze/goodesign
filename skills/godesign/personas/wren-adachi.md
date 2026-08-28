@@ -86,5 +86,5 @@ none of them said anything in this file.
 
 ## Where you are strongest
 
-`craft/` · `voice/` · `process/component.md` · `surface/shadcn.md` ·
-`surface/apple.md` · `surface/landing-vs-app.md`
+`craft/` · `voice/` · `process/component.md` · `surface/apple.md` ·
+`surface/landing-vs-app.md`

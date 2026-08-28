@@ -1,228 +1,152 @@
-# The motion catalogue — effects, with numbers
+# The motion catalogue — effects, and what each is for
 
 **Read when:** you have decided *whether* something animates (`craft/motion.md`)
-and need the recipe. Every entry is an effect, its numbers, and what it is for.
-Implementation code lives in `polish/animation-mechanics.md`.
-
-Pick the **personality** once per product and apply it everywhere; the numbers
-below are given per personality where they differ.
-
-```
-Corporate   200–400ms   cubic-bezier(0.2, 0, 0, 1)      overshoot 0–3%    the UI default
-Premium     350–600ms   cubic-bezier(0.4, 0, 0.2, 1)    overshoot 0%      elegant, luxury
-Playful     150–300ms   ease-out-back                   overshoot 10–20%  illustrations, toys
-Energetic   100–250ms   ease-out-expo                   overshoot 15–30%  bold, dynamic
-```
-
-Define three constants and stop: **one signature easing** for 80% of motion,
-**a duration palette of three** (quick / standard / slow), **one entrance
-pattern**.
-
----
+and need the effect. Each entry says what the motion does for the user and
+what makes it fail. The implementation belongs to whatever you are building
+in; the behaviour is the design.
 
 ## Entrances
 
-**Slide in** — position + opacity. Offset 20–40px → 0, opacity 0 → 1. Ease-out,
-200–350ms. Direction carries meaning: *from below* = arrival, *from right* =
-forward, *from left* = back, *from above* = dropdown / authority.
+**Slide in** — arrives from a direction, fading as it comes. The direction
+means something: from below is arrival, from the right is forward, from the
+left is back, from above is a menu or an authority. Choose the direction for
+the meaning; a random one is noise.
 
-**Scale in** — scale + opacity. **Never from `scale(0)`** — nothing in the world
-appears from nothing. Start at 0.9–0.95 (Premium 0.95–0.98; Playful 0.7–0.8),
-opacity 0. Ease-out, 150–300ms. The default for modals, popovers, tooltips,
-menus.
+**Grow in** — appears where it belongs, from nearly its full size, fading up.
+Menus, popovers, tooltips, dialogs. It fails when it starts from nothing
+(conjured) or from the wrong origin (unanchored) — a popover grows from its
+trigger, a dialog from the centre of the screen.
 
-**Reveal** — `clip-path` or mask + opacity, 300–500ms, ease-out. Top-to-bottom
-is dramatic; left-to-right follows reading; centre-out focuses; edge-in
-contains.
+**Reveal** — uncovered along an edge, as if a mask slides away. Reading order
+(left to right) for content, top-down for drama, centre-out for focus. Rare
+and expensive in attention; for a hero, once.
 
-**Assembled** — parts arrive from different origins, stagger 50–100ms, total
-300–600ms. Logo builds, icon assembly, chart construction. Rare.
-
-**Origin-aware.** A popover scales from its trigger, not from centre:
-`transform-origin: var(--radix-popover-content-transform-origin)` (Radix) or
-`var(--transform-origin)` (Base UI). **Modals are the exception** — they are
-anchored to the viewport and stay centred.
-
-**`@starting-style`** animates entry in pure CSS — no `useEffect` / `mounted`
-flag. Use it where support allows; fall back to a `data-mounted` attribute.
+**Assembled** — parts arrive from different origins and meet. Logo builds,
+data drawing itself. Very rare; a product surface almost never earns it.
 
 ## Exits
 
-**Exits are 65–75% of the entrance duration, and quieter.** The user's
-attention is already moving on.
+An exit is shorter and quieter than its entrance; the user's attention has
+already moved on.
 
-**Fade out** — opacity, optional scale to 0.98. 150–250ms. Gentle departures,
-crossfades.
+**Fade** — gone gently. Crossfades, backgrounding.
+**Slide out** — leaves the way it came, a small distance, not the whole
+height; enough that the eye knows where it went.
+**Collapse** — shrinks slightly as it fades. Deletion, dismissal, closing.
+**Transfer** — moves toward where it went and shrinks: add to cart, save to a
+collection, file into a folder. The one exit that carries information.
+**None** — the right exit when the motion would add nothing, the action is
+frequent, or reduced motion is set.
 
-**Slide out** — offset 20–40px + opacity. 150–250ms. A **small fixed** offset
-(−12px), not the full height.
-
-**Collapse** — scale 0.85–0.95 + opacity. 150–250ms. Deletion, dismissal,
-closing.
-
-**Transfer** — move toward a destination + shrink, ease-in-out, 250–400ms.
-Add-to-cart, save-to-collection, move-to-folder.
-
-**None** — remove immediately when the motion adds no information, the
-interaction is frequent, or reduced motion is set.
-
-**Continuity**: exit point near entry point; 100–150ms overlap between an exit
-and the entrance replacing it; same easing family for a pair.
+An exit and the entrance replacing it overlap slightly and share a curve, so
+the eye follows one movement, not two.
 
 ## Press, hover, toggle, focus
 
-**Press** — `scale(0.96–0.97)` on `:active`, transition 100–160ms ease-out.
-Never below 0.95. Playful: press 0.95 at 60ms, overshoot 1.05 at 80ms, settle
-by spring. Premium: 0.98, no overshoot. The secondary motion: shadow shrinks,
-icon shifts 2px.
+**Press** — the control gives slightly under the finger and returns. Subtle:
+far enough to feel, not so far it looks squashed. It confirms the interface
+heard the press before anything else happens.
 
-**Hover** — enter under 100ms, exit 150–200ms (a slower exit reads as
-polished). Under `@media (hover: hover) and (pointer: fine)`, always.
+**Hover** — a small contrast increase, arriving fast and leaving a little
+slower (the slower leave is what reads as polished). **Only where hover
+exists** — on a touch screen a hover state that sticks after a tap is a bug.
+A card may lift; an image may zoom very slightly inside its frame; a link
+gains its underline; an icon may tilt. All small.
 
-| Element | Effect |
-|---|---|
-| Button | contrast increase; scale 1.02 at most |
-| Card | scale 1.01 + shadow lift |
-| Link | colour + underline |
-| Icon | scale 1.1, rotation 2–5° |
-| Image | scale 1.03 inside `overflow: hidden`, 150ms |
+**Toggle** — the thumb travels and the track changes colour together, with a
+hint of squash in the direction of travel. A playful product may let it bounce
+at the end; a professional one never does.
 
-**Toggle / switch** — thumb 120–180ms ease-in-out; track colour simultaneously;
-a slight squash in the direction of travel.
+**Focus** — the ring appears decisively and must survive reduced motion; it
+is the keyboard user's cursor.
 
-**Focus ring** — scale 0.95 → 1 + opacity, 150ms. Must survive reduced motion.
-
-**Tooltips** — 125–200ms, `transform-origin` at the trigger. A delay before the
-first one; **instant and unanimated for every subsequent one** while any is
-open (`data-instant` → `transition-duration: 0ms`). The whole toolbar feels
-faster.
+**Tooltips** — a short delay before the first, so a passing pointer does not
+trigger it; then **instant and unanimated for every subsequent one** while any
+is open, because the user is now scanning, and the whole toolbar feels faster.
 
 ## Feedback states
 
-**Success** — container scale 0.9 → 1 (200ms, ease-out-back, 5–10% overshoot);
-checkmark stroke draws (150ms, 100ms delay); colour to success (200ms). Total
-400–500ms. This is a *rare* event, so it may afford this much.
+**Success** — a small pop and a checkmark drawing itself; a colour to
+success. This is rare, so it may afford a little ceremony — but the
+professional version is still under half a second.
 
-**Error shake** — horizontal ±10–15px, 2–3 cycles of decreasing amplitude,
-ease-in-out, 300–400ms total. **No overshoot — errors feel firm.**
-Inline validation: message slides down + fades (200ms), border to error
-(150ms), icon scales in (150ms, 50ms delay). On submit failure: scroll to the
-first error (300ms, ease-in-out) and focus it.
+**Error** — a firm horizontal shake, two or three cycles, decreasing; the
+field's edge turns to error; the message arrives beneath it. **No overshoot:
+errors feel firm.** On a failed submit the page moves to the first error and
+focuses it.
 
-**Loading** — spinner 360° linear, 1000–1500ms per revolution; **a faster
-spinner makes the wait feel shorter.** Skeleton: gradient sweep left-to-right,
-1500–2000ms, 10–20% base opacity to 30–40% peak, shapes matching the real
-layout. Indeterminate bar: 1500–2500ms oscillation, never frantic.
+**Loading** — a spinner turns at a steady rate; a faster one makes the same
+wait feel shorter. A skeleton shimmers in the shape of the real content — a
+skeleton in the wrong shape is a different kind of flicker. An indeterminate
+bar oscillates calmly; frantic reads as broken.
 
-**Disable** — opacity to 50–60% over 200ms. **Enable** — back to 100%, optional
-scale pulse 0.98 → 1.
+**Disable** — dims over a moment; **enable** — returns, perhaps with a small
+pulse to say "now you can".
 
 ## Lists and groups
 
-**Stagger** — each item 30–80ms after the previous. Shorter is better; long
-delays make the interface feel slow. **Total stagger under 400–500ms** however
-many items. Stagger is decorative: **never block interaction while it plays.**
+**Stagger** — items arrive one after another, a few tens of milliseconds
+apart, close enough that the whole group lands well under half a second no
+matter how many. It is decorative: **never block interaction while it
+plays**, and never stagger a routine interaction — row hovers, keystrokes,
+repeated tab changes — where the repetition is a cost.
 
-| Pattern | Delay | Total | For |
-|---|---|---|---|
-| Micro cascade | 20–40ms | <200ms | list items, grid cells |
-| Standard | 50–100ms | <400ms | cards, panels, nav |
-| Dramatic | 100–200ms | <600ms | a hero, once |
+**Coordinated sequences** — backdrop, then container, then contents in
+reading order, each beat overlapping the last slightly. A tab switch: the
+indicator slides, the old content fades, the new arrives from the tab's
+direction. An accordion: the arrow turns as the panel opens and the content
+fades in just after; siblings shift to make room. Drag and drop: the dragged
+item lifts, the others part; on drop it settles and the gap closes.
 
-Grid cards: scale from 0.95 + fade (250ms), reading order, +20ms per new row.
-Nav items: slide from the side + fade (180ms), 30–50ms apart, total <300ms.
+**Counter-motion** — when the hero moves, the background drifts the other
+way at a fraction of the speed; a lifting thing's shadow drops and softens;
+an expanding thing's siblings compress. This is what makes motion feel like it
+happens in a space.
 
-**Coordinated sequences** — in reading order, each beat overlapping the last by
-~25%:
-
-```
-Modal        0ms backdrop dims (200) → 50ms modal 0.95→1 (300) → 200ms title
-             → 280ms body → 350ms actions
-Tab switch   0ms indicator slides (250, ease-in-out) + old content fades (150)
-             → 100ms new content from the tab's direction (200) → items 40ms apart
-Accordion    arrow rotates (150) + height (250) + content fades at 50ms (200);
-             siblings shift (200). Collapse is the reverse, faster.
-Drag & drop  lift: scale 1.03 (150), others shift (200). Drop: settle (200),
-             gaps close.
-```
-
-**Paired elements move as one unit**: modal + overlay, tooltip + arrow, drawer +
-backdrop — same easing, same duration.
-
-**Counter-motion** — when the hero moves right, the background drifts left at
-20–30% of its speed. Lifts: the shadow drops and softens. Expands: siblings
-compress.
-
-**The 1/3 rules** — no element travels more than a third of the screen without
-an intermediate keyframe; with three or more elements, no more than a third are
-in motion at once.
-
-## `clip-path` — the underused tool
-
-`clip-path: inset(top right bottom left)`; each value eats in from that side.
-
-- **Tabs with perfect colour transition** — duplicate the tab list, style the
-  copy as active, clip it to the active tab, animate the clip on change. No
-  per-property colour timing can match it.
-- **Hold-to-delete** — an overlay at `inset(0 100% 0 0)`; on `:active`
-  transition to `inset(0 0 0 0)` over 2s *linear* (time made visible); release
-  snaps back at 200ms ease-out. Slow where the user decides, fast where the
-  system responds.
-- **Image reveal on scroll** — `inset(0 0 100% 0)` → `inset(0)` when in view,
-  once, with a −100px margin.
-- **Comparison slider** — two images, the top one clipped by the drag position.
-  No extra DOM.
+**Two thirds rules** — no single element crosses more than about a third of
+the screen in one movement without a beat, and with three or more elements no
+more than a third of them move at once. Beyond that the eye cannot follow
+and stops trying.
 
 ## Gestures
 
-`craft/states.md` sets the thresholds; these are the physics.
+`craft/states.md` sets when a gesture commits; these are how it feels.
 
-- **Momentum dismissal** — velocity = distance / elapsed. Over ~0.11 px/ms,
-  dismiss regardless of distance. A flick is enough.
-- **Damping at the boundary** — dragging past the end moves less the further
-  it goes. Things slow down before they stop; they do not hit a wall.
-- **Pointer capture** — once a drag starts, the element captures all pointer
-  events; leaving its bounds does not end the drag.
-- **Ignore additional touches** after a drag begins, or the element jumps.
-- **Springs** for anything dragged: `{ type: "spring", duration: 0.5, bounce:
-  0.2 }` (Apple's form — easier to reason about than stiffness/damping). Bounce
-  0.1–0.3 when used at all; **0 in most UI.** Springs keep their velocity when
-  interrupted; keyframes restart from zero.
+- **A flick is enough.** Dismissal is judged by speed as well as distance;
+  the user should not have to drag all the way.
+- **Things slow before they stop.** Dragging past the end moves less the
+  further you go — a wall is a bug, damping is physics.
+- **A drag continues even when the finger leaves the thing** it started on;
+  releasing is the only way to end it.
+- **A second finger does not steal the drag.**
+- **A thrown thing keeps its velocity and angle**; a spring, not a curve,
+  because a spring remembers the hand.
 
 ## Ambient
 
-Ambient motion is **at most 10–20% of the primary motion's energy** and never
-competes for attention.
-
-- **Breathing** — scale 0.98–1.02, sine ease-in-out, 2–4s. Over ±5% it demands
-  attention.
-- **Floating** — y ±5–15px, 3–5s; several elements at *different* periods
-  (4000 / 5500 / 3500ms) so they never sync.
-- **Gradient shift** — 8–20s per cycle, imperceptible at a glance.
-- **Parallax** — foreground 1×, mid 0.5×, back 0.2×; total under 100px; never on
-  text; avoid on mobile. Mouse-driven: foreground 10–20px, background 5–10px
-  the other way, 100–200ms interpolation.
-- **Shimmer** — 1500–2500ms sweep, 2–5s pause between. Skeletons, a "new"
-  badge, a premium accent. Never on body copy.
-- **Particles** — under 20 elements, transform and opacity only.
+Ambient motion is **a small fraction of the primary motion's energy** and
+never competes with it. Breathing (a slow, tiny scale pulse), floating
+(several things at different periods so they never sync), a gradient that
+shifts too slowly to see, parallax in a few layers at decreasing speed and
+never on text, a shimmer that sweeps and rests. Each exists to say the
+surface is alive, not to be looked at. On a product surface, almost never.
 
 ## Page transitions
 
-Product surfaces: usually none, or a 150ms crossfade. Marketing: current page
-slides left + fades (300ms, ease-in) → new page from the right (400ms,
-ease-out, 100ms delay) → shared elements morph (400ms, ease-in-out). View
-Transitions API where available.
+A product surface usually has none, or a brief crossfade. A marketing
+surface may let the old page leave one way and the new arrive from the
+other, with shared elements travelling between them so the eye keeps its
+place.
 
 ## Blur as a bridge
 
-When a crossfade shows two distinct objects overlapping and no easing fixes it,
-add `filter: blur(2px)` during the transition. The blur blends the states into
-one transformation. Keep it under 20px — heavy blur is expensive, and worst in
-Safari.
+When a crossfade shows two distinct things overlapping and no timing fixes
+it, a slight blur during the transition blends them into one transformation.
+Slight — heavy blur is expensive and reads as a defect.
 
 ## Debugging
 
-Play it at 10% in the Animations panel, or step frame by frame. Look for: two
-states visibly overlapping; an abrupt start or stop; the wrong
-`transform-origin`; properties out of sync. **Review it again the next day.**
-Test gestures on a real phone over USB, not a simulator.
+Slow it down as far as the medium allows and step through it. Look for two
+states visibly overlapping, an abrupt start or stop, growth from the wrong
+origin, properties out of step with each other. **Look at it again tomorrow.**
+Test gestures on the real device, in the hand, not in an emulator.

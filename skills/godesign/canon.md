@@ -130,21 +130,23 @@ that keyboard-initiated and high-frequency actions should not be animated.
 [Great animations](https://emilkowal.ski/ui/great-animations) ·
 [animations.dev](https://animations.dev/)
 
-**Jakub Krehel, *make-interfaces-feel-better*** (MIT) — the whole of
-`polish/` descends from this skill and its article: concentric radius, optical
-alignment, layered shadow-as-border, image outlines, split-and-stagger, subtle
-exits, the exact icon cross-fade values, scale(0.96), the 10%-speed review, and
-the Severity/Before/After/Why report with a verdict.
+**Jakub Krehel, *make-interfaces-feel-better*** (MIT) — the behaviours in
+`craft/shape-and-depth.md`, `craft/icons.md` and `craft/motion-catalogue.md`
+descend from this skill and its article: concentric radius, optical alignment,
+shadows for depth and edges for structure, a neutral image edge, split-and-
+stagger entrances, subtle exits, the press that gives, the slowed-down review,
+and the report with a verdict. Its implementation recipes are deliberately
+not carried; they belong to the skill for the medium.
 [GitHub](https://github.com/jakubkrehel/make-interfaces-feel-better) ·
 [Article](https://jakub.kr/writing/details-that-make-interfaces-feel-better)
 
 **Emil Kowalski's design-engineering skill** (vercel-labs/open-agents,
 `emil-design-eng`) — the animation decision framework by frequency, the strong
 custom curves, never `scale(0)`, origin-aware popovers, instant subsequent
-tooltips, blur as a bridge, `@starting-style`, the `clip-path` recipes, the
-gesture physics (velocity 0.11, damping, pointer capture), and the Sonner
-principles. Much of `craft/motion-catalogue.md` and the easing settlement in
-`craft/motion.md` descend from it.
+tooltips, blur as a bridge, the reveal and hold-to-confirm patterns, the
+gesture physics (a flick is enough, damping, the drag that survives leaving
+the thing), and the Sonner principles. The behaviours in `craft/motion-catalogue.md` and the easing
+settlement in `craft/motion.md` descend from it; its code does not travel.
 [open-agents](https://github.com/vercel-labs/open-agents)
 
 **LottieFiles, *motion-design-skill*** (MIT) — the four personalities and
@@ -153,17 +155,19 @@ the stagger budgets, coordinated sequences, ambient limits, the 1/3 rules, and
 Disney's twelve principles adapted for UI.
 [GitHub](https://github.com/LottieFiles/motion-design-skill)
 
-**shadcn/ui, the official skill** — the four principles, the token grammar,
-the always-enforced rules, the component selection table and the CLI workflow
-in `surface/shadcn.md`. **mattbx/shadcn-skills** for the five styles, the
-registry map and the search strategy.
+**shadcn/ui, the official skill**, and **mattbx/shadcn-skills** — the
+posture behind `process/component.md`: use what exists first, compose rather
+than reinvent, built-in variants before custom styles, colour by role, look
+in the catalogue before building, and the search strategy. The system's own
+grammar is deliberately not carried; the questions are.
 [shadcn](https://github.com/shadcn-ui/ui/blob/main/skills/shadcn/SKILL.md) ·
 [mattbx](https://github.com/mattbx/shadcn-skills)
 
-**Vercel, *Web Interface Guidelines*** — the mechanical rule set behind
-`process/lint.md`: accessibility, focus, forms, animation, typography, content
-handling, images, performance, navigation state, touch, safe areas, dark mode,
-i18n, hydration, and the anti-pattern list.
+**Vercel, *Web Interface Guidelines*** — the behaviours in `craft/forms.md`,
+`craft/responsive.md` and `process/audit.md`: never block paste, the field
+tells the device what it is, do not steal focus on a phone, the address is
+the state, zoom is never disabled, unsafe areas respected, warn before
+leaving with unsaved work. Its code-level checks are the medium's business.
 [vercel.com/design/guidelines](https://vercel.com/design/guidelines) ·
 [command.md](https://github.com/vercel-labs/web-interface-guidelines)
 
@@ -188,4 +192,4 @@ needlepoint, mosaics and traffic signs.
 
 **The terminal tradition** — VT100/ANSI escape sequences, ncurses, and the
 working vocabulary of vim, tmux, mc and htop; Charm's Bubble Tea and Lip Gloss,
-and ratatui, for the modern layout-in-cells model. `surface/tui.md`.
+and ratatui, for the modern layout-in-cells model. `surface/terminal.md`.

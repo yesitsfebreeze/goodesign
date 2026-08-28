@@ -25,13 +25,12 @@ kept; the list must describe what is generated now, not what was.
    recognisable AI layout there is.**
 3. **Icons in coloured circles** as section decoration (the SaaS starter-template
    look).
-4. **Centred everything** — `text-align: center` on every heading, description
-   and card.
+4. **Centred everything** — every heading, description and card centred.
 5. **Uniform bubbly border-radius** — the same large radius on every element.
 6. **Decorative blobs, floating circles, wavy SVG dividers.** If a section feels
    empty it needs better content, not decoration.
 7. **Emoji as design elements** — rockets in headings, emoji as bullets.
-8. **Coloured left-border on cards** — `border-left: 3px solid <accent>`.
+8. **A coloured stripe down the left edge of cards.**
 9. **Generic hero copy** — "Welcome to X", "Unlock the power of…", "Your
    all-in-one solution for…".
 10. **Cookie-cutter section rhythm** — hero → 3 features → testimonials →
@@ -57,7 +56,7 @@ that is what a tasteful page looks like this year is the same failure as the
 purple gradient, one generation later.
 
 **Two smaller reflexes that survive every list**: the uppercase, tracked,
-small label over every section (`.eyebrow`, `.label`, `thead th`) — an
+small label over every section — an
 editorial habit that needs an argument like any other; and the primary +
 secondary button pair under the hero, whatever the labels say. One action, or
 an argument for two.

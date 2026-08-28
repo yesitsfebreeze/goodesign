@@ -29,8 +29,8 @@ In rough order of authority:
 ```
 AGENTS.md / CLAUDE.md          — stated rules, highest authority
 DESIGN.md                      — the design system of record
-tokens/ · *.css custom props   — the real values, and what is actually allowed
-tailwind.config · theme files  — the scale in force
+the token file                 — the real values, and what is actually allowed
+the theme or config            — the scale in force
 an existing component of the same kind — the strongest precedent there is
 ```
 
@@ -44,13 +44,11 @@ spreads.
 
 ## Express the fix in the project's own system
 
-Before writing a fix, identify the styling system in force — Tailwind, plain
-CSS, the established CSS-in-JS — and write the change in that system. **Never
-introduce a second styling system to apply a polish fix.** Likewise never
-introduce a typeface, paid or free, to satisfy a polish checklist: font
-smoothing, wrapping and tabular figures are rendering details and do not
-override the product's chosen family. A type change is a decision, made
-in `craft/type.md`, not a side effect.
+Before changing anything, identify how the product expresses style — its
+tokens, its variants, its conventions — and express the change in that
+vocabulary. **Never introduce a second way of styling to apply a polish fix.**
+Likewise never introduce a typeface to satisfy a checklist: a type change is a
+decision, made in `craft/type.md`, not a side effect.
 
 ## Reaching for the role, never the pigment
 

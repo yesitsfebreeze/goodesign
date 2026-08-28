@@ -26,8 +26,10 @@ Space is the primary material. Everything else follows from it.
   grows, the text column stops and the margins take the growth.
 - **Optical beats mathematical.** A cap-height block centred by maths sits high;
   an icon centred in a circular button sits off; a triangle in a play button is
-  always nudged right. Trust the eye over the number when they disagree, and
-  write the correction down. Mechanics: `polish/radius-and-optics.md`.
+  always nudged right; a button with a trailing icon wants a little less
+  padding on the icon side. Trust the eye over the number when they disagree,
+  and write the correction down. Where an icon is off, fix the drawing, not
+  the margin around it.
 - **Rules between list items are the same admission as rules between
   blocks.** Try 24px of gap first; keep the rule only where rows are rows — a
   table, a ledger — and the eye must track across.

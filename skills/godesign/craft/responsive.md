@@ -2,33 +2,31 @@
 
 **Read when:** the layout must survive more than one width.
 
-- **Small width first**, then **the awkward middle** — 700–1000px is where
-  layouts actually break, not at the extremes everyone tests.
-- **Breakpoints follow the content**, not device names. The breakpoint is where
-  the measure goes wrong.
-- **Do not reflow a hierarchy across widths.** What is most important stays most
-  important at every size.
-- **Mobile is a design, not a stack.** "Stacked desktop columns" is not a mobile
-  layout.
+- **Small width first**, then **the awkward middle** — the widths between a
+  phone and a laptop are where layouts actually break, and nobody tests them
+  because they are not a device anyone owns.
+- **Breakpoints follow the content**, not device names. The breakpoint is
+  where the measure goes wrong, or a column gets too narrow to hold its
+  longest string — not where a marketing department drew a phone.
+- **Do not reflow a hierarchy across widths.** What is most important stays
+  most important at every size; a narrow layout that promotes the sidebar is
+  a different design, not a smaller one.
+- **A narrow layout is a design, not a stack.** "The desktop columns, on top
+  of each other" is what happens when nobody decided.
 
-## Widths to actually check
+## Non-negotiable, with reasons
 
-```
-360    small phone
-768    tablet / the fold in most layouts
-900    the awkward middle — where it breaks
-1440   wide
-```
-
-## Non-negotiable
-
-- **No horizontal scroll at any viewport.**
-- Max content width set — no full-bleed body text.
-- Body text ≥ 16px on mobile; readable without zoom.
-- Touch targets ≥ 44px.
-- Never `user-scalable=no` or `maximum-scale=1` in the viewport meta.
-- `env(safe-area-inset-*)` respected on notched devices.
-- Respect the on-screen keyboard; test with a scrollbar present.
-- Images handle responsiveness — `srcset`, `sizes`, or CSS containment.
-- Navigation collapses deliberately — hamburger, bottom nav, or something
-  better. Not "it just wraps".
+- **No sideways scroll at any width.** It is the one thing a user cannot
+  recover from without understanding what went wrong.
+- **A maximum content width**, so body text never runs the full width of a
+  large screen — `craft/type.md`'s measure.
+- **Text is readable without zooming**, and **zoom is never disabled** — the
+  user's eyesight is not a design decision.
+- **Targets are fingertip-sized on touch** — `craft/states.md`.
+- **Respect the device's unsafe areas** — the notch, the home indicator, the
+  rounded corners — and the on-screen keyboard, which takes half the screen.
+- **Test with a scrollbar present**; on some systems it takes real width.
+- **Images fit their container at every width** and never force a layout
+  wider than the screen.
+- **Navigation collapses on purpose** — into a menu, a bottom bar, a
+  different thing — not by wrapping into whatever it becomes.

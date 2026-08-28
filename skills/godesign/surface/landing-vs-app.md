@@ -40,7 +40,7 @@ HYBRID                a marketing shell with app-like sections
   sentence.
 - **Motion:** 2–3 intentional motions minimum — an entrance, something
   scroll-linked, a hover or reveal.
-- **Colour:** CSS variables, one accent by default, and not purple-on-white.
+- **Colour:** by role, one accent by default, and not purple-on-white.
 - **Copy is product language, not design commentary.**
 - **Two typefaces maximum. Cardless by default.**
 
@@ -60,7 +60,7 @@ HYBRID                a marketing shell with app-like sections
 
 ## Universal rules
 
-- CSS variables define the colour system.
+- Colour is defined by role, once, and referenced everywhere.
 - No default font stacks — Inter, Roboto, Arial, system.
 - One job per section.
 - **If deleting 30% of the copy improves it, keep deleting.**

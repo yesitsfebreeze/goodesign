@@ -1,14 +1,21 @@
 ---
 name: godesign
-description: The design authority — one skill, atomic files, read on demand. Load before designing, building, changing or judging anything a person uses or looks at: a flow, a screen, a page, a component, a terminal UI, information architecture, spacing, type, colour, states, motion, copy, empty and error cases. Use for "/godesign", "create a button", "design review", "build this page", "design this flow", "make this look finished", "the spacing is off", "does this look right", "make it feel premium", "make it pop", "animate this", "design the TUI", "make it look Apple", "why does this look AI-generated", or before shipping any interface.
+description: The design authority — one skill, atomic files, read on demand, and no framework named anywhere in it. Load before designing, building, changing or judging anything a person uses or looks at: a flow, a screen, a page, a component, a terminal UI, information architecture, spacing, type, colour, states, motion, copy, empty and error cases. Use for "/godesign", "create a button", "design review", "build this page", "design this flow", "make this look finished", "the spacing is off", "does this look right", "make it feel premium", "make it pop", "animate this", "design the TUI", "make it look Apple", "why does this look AI-generated", or before shipping any interface.
 ---
 
 # godesign
 
 **Do not read this whole skill.** Read this page, then the files in the route
 for the task — a component needs three, a page needs ten, a review needs
-four. Read those in full and nothing else. Every file is atomic, opens with a
+three. Read those in full and nothing else. Every file is atomic, opens with a
 **Read when** line, and cites the others by path.
+
+**This skill is about behaviour and its reasons, never about the fix.** It
+does not know what you are building in, and it does not need to: a button is
+the same button in every system. Combine it with the skill for your medium;
+that skill supplies the commands, this one supplies the judgement. Where a
+number appears here it is a fact about perception or law with its reason
+beside it — never one implementation's convention.
 
 Default persona: Wren Adachi (`lead`). `personas/index.md` only to switch —
 flow and IA → `ux`, motion → `motion`, a terminal → `tui`.
@@ -19,25 +26,26 @@ flow and IA → `ux`, motion → `motion`, a terminal → `tui`.
 
 > **The job, then the flow, then the screen, then the pixel.**
 
-Stop at the first level that fails. A pixel fix above a broken flow is wasted.
+Stop designing at the first level that fails. A pixel fix above a broken flow
+is wasted.
 
 ## Always true, even if nothing else is read
 
-1. **The house law wins.** `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`, the tokens —
-   read them first; they outrank this skill. → `core/house-law.md`
+1. **The house law wins.** The product's own rules, system and tokens — read
+   them first; they outrank this skill. → `core/house-law.md`
 2. **Read the tree before building anything.** Every relative of the thing,
-   which variant is the house voice, what the system ships. Greenfield: say so
-   and move on. → `core/house-law.md`
-3. **State the job and the brief before the first line of markup.** → `core/contract.md`
+   which one is the house voice, what the system ships. Greenfield: say so and
+   move on. → `core/house-law.md`
+3. **State the job and the brief before the first mark.** → `core/contract.md`
 4. **Space and type first; everything else derives.**
 5. **Real copy, real length, real data. Never placeholder.**
 6. **The states are the product** — empty, loading, error, one item, twelve,
    the longest string.
 7. **One accent, rare. One scale, every gap on it. Nothing animates on a
-   100×/day action.**
+   many-times-a-day action.**
 8. **Name the fix in files, tokens and numbers.** Adjectives are not findings.
 9. **Run the gate before saying done; label every line verified / inspected /
-   not verified.** → `process/gate.md`
+   not verified — and never verified by assertion.** → `process/gate.md`
 
 ## When it is slow
 
@@ -59,14 +67,13 @@ Fifteen minutes in without all five is dithering. → `process/methods.md`
 | **"Create a button"** — any single component | `process/component.md` |
 | Build a page | `core/contract.md` → `surface/landing-vs-app.md` → `craft/space.md` → `craft/type.md` → `voice/directions.md` → `craft/content.md` → `craft/states.md` → `voice/slop.md` → `voice/commitment.md` → `process/gate.md` |
 | Design a flow, wizard, onboarding | `flow/flow.md` → `flow/failure.md` → `flow/time.md` |
-| Review a page or component from source | `process/review.md` → `process/lint.md` → `process/gate.md` |
-| Audit a whole site, page by page | `process/audit.md` → `process/lint.md` |
+| Review a built page or component | `process/review.md` → `voice/slop.md` → `process/gate.md` |
+| Audit a whole site, page by page | `process/audit.md` |
 | Review a plan or PRD | `process/plan-review.md` |
-| Add or fix motion | `craft/motion.md` → `craft/motion-catalogue.md` → `polish/animation-mechanics.md` |
-| Repo has `components.json` | `surface/shadcn.md` |
-| Anything in a terminal | `surface/tui.md` → `surface/tui-components.md` |
+| Add or fix motion | `craft/motion.md` → `craft/motion-catalogue.md` |
+| Anything in a terminal | `surface/terminal.md` |
 | No design system exists | `process/design-system.md` → `kit/defaults.md` → `voice/directions.md` |
-| Redesign, deslop, design-to-code, reverse-engineer | `process/workflows.md` |
+| Redesign, deslop, design-to-build, reverse-engineer | `process/workflows.md` |
 | Challenge a claim made here | `canon.md` |
 
 ## Route by symptom
@@ -74,24 +81,24 @@ Fifteen minutes in without all five is dithering. → `process/methods.md`
 | Said or seen | Read |
 |---|---|
 | "Make it pop" · "make it feel premium" | `core/beliefs.md` — the hierarchy is broken; then `voice/commitment.md` |
-| "Looks AI-generated" · "generic" | `voice/slop.md` → `voice/commitment.md` |
+| "Looks AI-generated" · "generic" · "tasteful but nothing" | `voice/slop.md` → `voice/commitment.md` |
 | "The spacing is off" · cramped · floaty | `craft/space.md` |
 | Hierarchy does not read | `craft/space.md` → `craft/type.md` — weight before size |
 | "Make it look Apple" | `surface/apple.md` |
-| Nested radii look wrong · icon off-centre | `polish/radius-and-optics.md` |
-| Icons too light or heavy next to text · RTL | `polish/icons.md` |
-| Numbers jitter · a heading orphans a word | `polish/text-rendering.md` |
+| Nested corners look pinched · an icon looks off-centre | `craft/shape-and-depth.md` · `craft/space.md` |
+| Icons too light or heavy next to text · right-to-left | `craft/icons.md` |
+| Numbers jitter · a heading orphans a word | `craft/type.md` |
 | Animation janky, snaps, or *noticeable* | `craft/motion.md` — if you notice it, it is too long |
-| Popover scales from the wrong place | `craft/motion-catalogue.md` |
-| Contrast, focus rings, target sizes | `craft/colour.md` · `craft/states.md` · `polish/hit-areas.md` |
+| A menu grows from the wrong place | `craft/motion-catalogue.md` |
+| Contrast, focus, target sizes | `craft/colour.md` · `craft/states.md` |
 | "Should this be a card?" | `surface/landing-vs-app.md` |
 | Empty state · first run | `flow/first-run.md` |
 | Errors · destructive actions | `flow/failure.md` |
 | Spinners · skeletons · optimistic UI | `flow/time.md` |
 | Naming · navigation · IA | `flow/structure.md` |
 | Forms · keyboard · validation | `craft/forms.md` |
-| Button labels · error copy | `craft/content.md` |
-| Breaks between 700 and 1000px | `craft/responsive.md` |
+| Button labels · error copy · du or Sie | `craft/content.md` |
+| Breaks between a phone and a laptop | `craft/responsive.md` |
 | Which typeface · which direction | `voice/directions.md` |
 | Seven findings, no idea which to fix | `process/methods.md` — the smallest structural move |
 | The gate will not pass | `process/methods.md` — cut scope before effort |
@@ -103,15 +110,13 @@ Fifteen minutes in without all five is dithering. → `process/methods.md`
 ```
 core/      contract · beliefs · house-law
 flow/      flow · failure · time · structure · first-run · judgement
-craft/     space · type · colour · shape-and-depth · states · motion ·
+craft/     space · type · colour · shape-and-depth · icons · states · motion ·
            motion-catalogue · responsive · forms · content
-polish/    radius-and-optics · shadows-and-outlines · text-rendering ·
-           animation-mechanics · performance · hit-areas · icons
-surface/   tui · tui-components · apple · landing-vs-app · shadcn
+surface/   terminal · apple · landing-vs-app
 voice/     slop · commitment · directions
-process/   component · workflows · review · lint · gate · audit ·
-           plan-review · design-system · methods
-kit/       defaults · widths.html (the gate-14 harness)
+process/   component · workflows · review · gate · audit · plan-review ·
+           design-system · methods
+kit/       defaults
 personas/  index · wren-adachi (lead) · ines-calder (ux) ·
            rio-castellanos (motion) · ash-lindqvist (tui) · creating
 canon.md   every claim, traced to its source
@@ -119,7 +124,7 @@ canon.md   every claim, traced to its source
 
 ## Reporting
 
-Seven findings maximum, ordered by what a person notices first. Each names the
-file, the token and the number, and what the fix costs. Assumptions labelled as
-assumptions; taste as taste. Two directions open → build both, describe none.
-Format and verdict: `process/review.md`.
+Seven findings maximum, ordered by what a person notices first. Each names
+where, what, and the number, and what the fix costs. Assumptions labelled as
+assumptions; taste as taste; invented facts in one list. Two directions open →
+build both, describe none. Format and verdict: `process/review.md`.

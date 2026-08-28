@@ -1,70 +1,49 @@
 # The defaults kit
 
-**Read when:** nothing exists yet and you need a starting system. These are a
-starting point, not a style — **replace any value with a reason, none of them by
-accident.**
+**Read when:** nothing exists yet and you need a starting system. A starting
+point, not a style — **every value here has a reason, and any value can be
+replaced by a better reason. None by accident.**
 
 ```
-Space     4 8 12 16 24 32 48 64 96 128 160
-Type      ratio 1.25 → 12 14 16 20 25 31 39 49 61 (use five)
-Body      16–18px · 60–75ch · leading 1.5 · tracking 0
-Display   leading 1.05–1.15 · tracking −0.02 to −0.04em
-Neutrals  one ramp, 8 steps, ground to ink — not grey plus opacity
-Accent    exactly one, plus its ink-safe variant for text
-Radius    one language; nested = outer − padding
-Border    1px, one subtle role; a second border colour needs an argument
-Elevation two levels, maximum
-Duration  120 micro · 200 enter · 140 exit
-Easing    ease-out   cubic-bezier(0.23, 1, 0.32, 1)   enter AND exit; exit shorter
-          in-out     cubic-bezier(0.77, 0, 0.175, 1)  on-screen movement
-Contrast  text 4.5:1 · large 3:1 · UI and focus ring 3:1 both sides
-Targets   24px minimum · 44px touch
-```
-
-## As tokens
-
-```css
-:root {
-  /* space */
-  --space-1: 4px;  --space-2: 8px;   --space-3: 12px; --space-4: 16px;
-  --space-5: 24px; --space-6: 32px;  --space-7: 48px; --space-8: 64px;
-  --space-9: 96px; --space-10: 128px; --space-11: 160px;
-
-  /* type — pick five steps, delete the rest */
-  --text-xs: 12px; --text-sm: 14px; --text-base: 16px;
-  --text-lg: 20px; --text-xl: 25px; --text-2xl: 31px; --text-3xl: 39px;
-  --leading-body: 1.5; --leading-display: 1.1;
-  --measure: 68ch;
-
-  /* colour — roles, never pigments */
-  --surface-page: …; --surface-raised: …;
-  --text-body: …; --text-muted: …;
-  --border-subtle: …; --focus-ring: …;
-  --accent: …; --accent-ink: …;   /* the ink variant is the one that passes 4.5:1 */
-
-  /* shape */
-  --radius: 12px;
-  --elevation-1: …; --elevation-2: …;
-
-  /* motion */
-  --dur-micro: 120ms; --dur-enter: 200ms; --dur-exit: 140ms;
-  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
-}
+Space      4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128 · 160
+           — a scale that doubles and halves, because the eye reads ratio, not
+             difference; three clear magnitudes for line, block, section
+Type       ratio 1.25 → 12 14 16 20 25 31 39 49 61 — use five
+           — a ratio, because hierarchy is relationship; five steps, because
+             more stop reading as steps
+Body       the medium's comfortable reading size · measure 60–75 characters ·
+           leading ~1.5 · no tracking
+           — measure from how far the eye can carry a line back; leading from
+             the measure
+Display    leading tightening toward 1.1 · tracking slightly negative
+           — big letters sit closer; untracked display is the commonest tell
+Neutrals   one ramp, eight steps, ground to ink, one temperature
+Accent     exactly one, plus a darker variant that passes as text
+Radius     one language; nested = outer − padding (concentric)
+Edge       one subtle edge role; a second edge colour needs an argument
+Elevation  two levels, maximum — the page, and the thing above the page
+Motion     press feedback shortest · entrance next · dialogs longest, still
+           under a third of a second · exits two thirds of entrances
+           — perception sets these; see craft/motion.md
+Easing     one decisive ease-out for entering and leaving · one ease-in-out
+           for on-screen movement · linear only for constant motion
+Contrast   text 4.5:1 · large 3:1 · glyphs and focus 3:1 both sides
+           — WCAG 2.2 AA; legal facts, not preferences
+Targets    fingertip on touch (~44) · the legal floor is about half that
 ```
 
 ## For a terminal
 
 ```
-Colour    ANSI indices 0–15 only on a native terminal — the user's palette wins
-          ≤ 3–4 colours on screen at once
-Minimum   80×24
-Overlay   60% width · 65% height · centred · rounded border
-Hierarchy position → inverse → bold → colour → dim → border → whitespace
+Colour     the user's palette, by role — never a pigment of your own
+           ≤ 3–4 colours on screen at once
+Narrowest  whatever the environment produces; design to survive it
+Overlay    centred, most but not all of the screen, its own corner style
+Hierarchy  position → inversion → weight → colour → dim → edge → blank rows
 ```
 
-See `surface/tui.md`.
+`surface/terminal.md`.
 
 ## Before using any of this
 
-`core/house-law.md`. If the repo has a scale, that scale wins.
+`core/house-law.md`. If the product has a scale, that scale wins.

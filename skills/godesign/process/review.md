@@ -5,11 +5,10 @@
 Run in this order — the order a person actually meets the product in. **Stop
 *designing* at the first level that fails.** A typographic fix on a screen
 whose flow is wrong is wasted work, and so is a flow fix on a screen answering
-the wrong job. **But levels 5–8 are still run mechanically** — `process/lint.md`
-and the greps in `process/gate.md` — because a HIGH at level 5 or 6 (a focus
-ring removed, a layout that ratchets on resize) blocks the ship regardless of
-where the design fails, and a report that stopped at a LOW on level 1 would
-never have found it.
+the wrong job. **But levels 5–8 are still checked** — with whatever the medium offers —
+because a HIGH at level 5 or 6 (a focus ring removed, a layout that ratchets
+on resize) blocks the ship regardless of where the design fails, and a report
+that stopped at a LOW on level 1 would never have found it.
 
 ```
 0  Job and flow    whose job is this, does the sequence get them there in the
@@ -36,12 +35,10 @@ never have found it.
 
 ## Slow it down
 
-When motion is involved, **replay it at 10% speed** in the browser's Animations
-panel and walk every state — hover, focus, active, loading, empty. What feels
-off at 10% is what is subtly wrong at full speed. **Without DevTools** — a
-headless browser — the 10% replay is *not verified* and the report says so;
-measure what can be measured instead (`getBoundingClientRect`,
-`getComputedStyle`, a screenshot per state).
+When motion is involved, **replay it as slowly as the medium allows** and
+walk every state — hover, focus, active, loading, empty. What feels off slowed
+down is what is subtly wrong at full speed. Where the medium gives no way to
+slow it, the check is *not verified* and the report says so.
 
 ## Where the heuristics land
 
@@ -58,13 +55,20 @@ taste — and it is labelled as taste.**
   thirty is a way of deciding nothing.
 - **Each finding names the file, the token and the number.** "Feels cramped" is
   not a finding. "`section` padding is 24px against a 64px rhythm everywhere
-  else — `styles/layout.css:40`" is.
+  else — the layout file, line 40" is.
 - **Say what the fix costs.**
 - Where two directions are genuinely open, **build both and look at them** —
   do not describe ten. In a read-only review, name both in one row and say
   which you would build first.
 - Never review with placeholder copy. Real content at real length, or it is not
   a review.
+
+## Where the commands come from
+
+This skill says *what* to check and how to label it. *How* — the search, the
+measurement, the tool — belongs to the skill for whatever the thing is built
+in, and skills combine. If no such skill is loaded, the check is *inspected*
+and says so; it is never *verified* by assertion.
 
 ## For a whole site, page by page
 
@@ -91,7 +95,7 @@ per diff. A repeated systemic issue is one row listing every location.
 
 | Severity | Location | Before | After | Why |
 |---|---|---|---|---|
-| MEDIUM | `src/Counter.tsx:17` | `<span>{count}</span>` | `<span className="tabular-nums">` | proportional digits shift as the value changes |
+| MEDIUM | the counter, line 17 | proportional figures | tabular figures | proportional digits shift as the value changes |
 
 ```
 HIGH     makes an interaction inaccessible, misleading, unreadable, or
@@ -100,8 +104,7 @@ MEDIUM   a noticeable usability or consistency problem
 LOW      isolated polish — reported only in a full review
 ```
 
-Location is `path/to/file:line`; with no source, the exact screen and
-component. *Why* names the principle and the user impact. Omit a principle's
+Location is the file and line; with no source, the exact screen and component. *Why* names the principle and the user impact. Omit a principle's
 table if nothing was found. Never pad to a count.
 
 **Considered but rejected** — one to five real candidates and why they did not
@@ -109,13 +112,12 @@ make the list. Do not invent filler; if there are fewer, say so.
 
 | Location | Candidate | Rejected because |
 |---|---|---|
-| `src/Card.tsx:28` | increase the shadow | depth already matches the shared surface token; changing one card reduces consistency |
+| the card, line 28 | increase the shadow | depth already matches the shared surface role; changing one card reduces consistency |
 
 **Verification** — the gate table from `process/gate.md`, one row per line,
-each labelled *verified (which command)* · *inspected* · *fail* · *not
-verified* · *not applicable* · *house-law*. Lint hits (`process/lint.md`) land
-in rows 2, 8, 11, 12. Where the repo gate mutates and the brief is read-only,
-the row says *partial* and names the step skipped.
+each labelled *verified (how)* · *inspected* · *fail* · *not verified* ·
+*not applicable* · *house-law*. Where the product's own gate mutates and the
+brief is read-only, the row says *partial* and names the step skipped.
 
 **Verdict** — `Block` if any HIGH remains · `Needs changes` if only MEDIUM or
 LOW remain · `Approve` only with no actionable finding. List every unverified

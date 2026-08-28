@@ -27,8 +27,8 @@ does not read. Decided second, after space, before everything else.
   lowercase text.
 - **Never centre a paragraph.** Centre a line, or a stack of short lines with a
   deliberate ragged shape. More than three centred lines is a wall.
-- **Kill widows in headings** with a non-breaking space, not a `<br>`, so it
-  survives translation.
+- **Kill widows in headings** by binding the last two words together, not by
+  forcing a break, so it survives translation.
 - **Do not hyphenate display type.** Hyphenate body only at a narrow measure.
 - **Figures are a choice.** Tabular in tables, prices, timers, anything that
   must align in a column; proportional in prose.
@@ -58,18 +58,6 @@ wish and **the fallback stack is the type decision.** Choose it as such —
 stack you expect to render into the brief's `Type:` line, and check the page
 in what actually renders, not in what you named.
 
-Installed faces, by direction — macOS · Windows · Linux, in that order:
-
-```
-humanist sans     Avenir Next · Segoe UI · Cantarell        the tasteful default —
-                                                            a knowing choice, not a reflex
-grotesk           Helvetica Neue · Arial · Liberation Sans  neutral; the overused one
-geometric-ish     Gill Sans · Segoe UI · Cantarell
-text serif        Iowan Old Style · Charter · Georgia       editorial, long reading
-transitional      Baskerville · Georgia · Liberation Serif
-slab / display    Rockwell · Rockwell · DejaVu Serif
-mono              SF Mono · Consolas · DejaVu Sans Mono     figures, times, code
-```
 
 Two families, one of them possibly mono. If the same stack would serve a
 techno label and a tax adviser, it was not chosen for this brief.
@@ -80,7 +68,10 @@ See `voice/directions.md` for recommendations by purpose, the blacklist, and
 the overused-by-default list (Inter, Roboto, Poppins and friends). Type carries
 the personality, and it is the cheapest personality there is.
 
-## Rendering mechanics
+## Rendering
 
-`text-wrap: balance` / `pretty`, font smoothing, tabular numerals:
-`polish/text-rendering.md`.
+Balance the lines of a heading so none is left with a single word; let the
+medium avoid orphans in short paragraphs where it can; leave long text alone.
+Figures that change or align in a column are set tabular so nothing jitters
+as a value updates. When fonts arrive late, the text must not flash between
+faces.

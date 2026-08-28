@@ -1,6 +1,7 @@
 # Motion
 
-**Read when:** adding, tuning, or cutting any animation.
+**Read when:** adding, tuning, or cutting any animation. The recipes are in
+`craft/motion-catalogue.md`; this file is whether, how much, and why.
 
 - **Motion explains a relationship or it does not ship.** Where did this come
   from, where did it go, what is it attached to. Nothing else earns a frame.
@@ -8,126 +9,115 @@
 
 ## First: should it animate at all?
 
-Frequency decides, before purpose and long before taste.
+Frequency decides, before purpose and long before taste — because the
+attention an animation costs is charged **every time it plays**, and a
+transition that delights on first sight is a delay by the fiftieth.
 
 ```
-100+ times a day     keyboard shortcuts, command palette, context menu    no animation. Ever.
-tens of times a day  hover, list navigation, tab changes                 remove, or ≤150ms opacity/colour
-occasional           modals, drawers, toasts                             the standard
-rare / first-time    onboarding, success, a celebration                  may afford delight
+many times a day     shortcuts, a command palette, a context menu   no animation, ever
+tens of times a day  hover, list navigation, tab changes            none, or the barest acknowledgement
+occasional           dialogs, drawers, notices                      the standard
+rare or first-time   onboarding, a success, a celebration           may afford delight
 ```
 
-Then purpose. Valid: spatial consistency, state indication, explanation,
-feedback, preventing a jarring change. "It looks cool" is valid only where the
-user will rarely see it.
+Keyboard-initiated actions tolerate less than touch: pressing a key feels
+mechanical, touching a screen feels physical, and the eye expects less
+ceremony after the first. Where a frequent action still needs acknowledging,
+a haptic or a static cue does it without a delay.
+
+Then purpose. Valid: keeping things spatially consistent, showing a state
+changed, explaining how something works, confirming the interface heard the
+user, preventing a jarring cut. "It looks cool" is valid only where the user
+will rarely see it.
 
 ## Duration
 
-```
-100–160ms   press feedback, micro-feedback
-125–200ms   tooltips, small popovers
-150–250ms   dropdowns, selects, menus
-200–300ms   modals, drawers, sheets
-< 300ms     everything on a product surface — a 180ms dropdown feels more
-            responsive than a 400ms one, and a faster spinner makes a load
-            feel shorter
-300–600ms   page transitions and marketing only
-```
+The floor is perception: feedback inside about a tenth of a second reads as
+the interface responding; anything under about four tenths reads as instant
+(the Doherty threshold). Above that, the user is waiting, and an animation
+is the thing they are waiting for.
 
-Larger things move slower than smaller; longer travel takes longer. An exit is
-65–75% of its entrance.
+So: **press feedback and micro-acknowledgements are the shortest; small
+things that appear near the pointer next; menus and selects next; dialogs
+and drawers the longest a product surface allows — and even those stay well
+under a third of a second**, because a faster entrance *feels* more
+responsive at identical function, and a faster spinner makes an identical
+load feel shorter. Larger things move slower than smaller ones and longer
+travel takes longer, both because the eye expects mass and distance to cost
+time. Page transitions and marketing may go longer, because nobody repeats
+them fifty times an hour.
+
+**An exit is shorter and quieter than its entrance** — roughly two thirds —
+because the user's attention has already left it.
 
 ## Easing
 
-Decide by what the element is doing:
+Decide by what the element is doing, because each shape of curve tells the
+eye a different story:
 
 ```
-entering or exiting the screen     ease-out     starts fast → feels responsive
-moving or morphing while on screen ease-in-out  accelerates then brakes
-hover, colour, a tint              ease         gentle asymmetry
-constant motion — marquee, spinner linear       the ONLY place linear belongs
-dragged or thrown                  spring       bounce 0.1–0.3, or 0
+entering or leaving the screen    starts fast, settles — the thing responds instantly
+moving while on screen            accelerates then brakes — like a thing with mass
+a hover, a tint, a colour         gentle, slightly asymmetric — a change of mood, not place
+constant motion — spinner, ticker  linear — the only place linear belongs; anywhere
+                                   else it reads as robotic
+dragged or thrown                 spring — keeps the velocity the hand gave it
 ```
 
-**Use custom curves.** The built-in keywords are too weak to feel intentional.
+**The default curves most systems ship are too gentle to read as
+intentional.** Use a decisive curve, keep **one signature easing** for most
+motion, **a palette of three durations**, and **one entrance pattern** per
+product — consistency is what makes motion feel designed rather than added.
 
-```
---ease-out:     cubic-bezier(0.23, 1, 0.32, 1)      strong ease-out for UI
---ease-in-out:  cubic-bezier(0.77, 0, 0.175, 1)     on-screen movement
---ease-drawer:  cubic-bezier(0.32, 0.72, 0, 1)      the iOS sheet curve
---ease-md3:     cubic-bezier(0.2, 0, 0, 1)          Material's default; crisp
-```
+**Exits ease the same way as entrances, only shorter.** The case for an
+accelerating exit ("it leaves under its own speed") is real, but a slow start
+on an exit delays the thing *replacing* it — the thing the user is now
+watching. Reserve the accelerating exit for something physically thrown off
+the screen by a gesture. Never mix the two on one surface.
 
-**Exits — settled.** Exits use **ease-out too**, shorter. The argument for
-ease-in ("accelerate away", Material and the Disney adaptation) is real, but a
-slow start on an exit delays the thing replacing it — the thing the user is
-now watching. Reserve an accelerating exit for something physically leaving the
-screen under its own momentum — a swiped toast, a thrown card — and keep it
-under 200ms. Never mix the two on one surface.
-
-**Paired elements move as one unit.** Modal + overlay, tooltip + arrow, drawer
-+ backdrop: same easing, same duration.
+**Things that move together move as one**: a dialog and its backdrop, a
+tooltip and its arrow, a drawer and its shade — same curve, same duration,
+or the eye sees two objects.
 
 ## Rules
 
-- **Animate `transform` and `opacity` only.** (`filter` and `clip-path` are also
-  GPU-compositable.) Animating layout properties — width, height, top, left — is
-  a jank bug wearing a design costume.
+- **Only move what can move without the layout recalculating.** Animate
+  position, scale, opacity — not size, padding or margin, which force the
+  whole page to relayout every frame and stutter. A dropped frame is more
+  noticeable than a wrong curve; smoothness is the floor, not the target.
 - **Never more than two properties at once.**
-- **Never `transition: all`.** List the properties. See `polish/performance.md`.
-- **Animations are interruptible** and animate from their current value. A
-  reversed gesture reverses the animation; it does not queue behind it. Use CSS
-  *transitions* for interactive state, keyframes only for one-shot sequences.
-- **Frequency decides the budget, before taste does.** A command palette or a
-  context menu opened fifty times a day gets **no** animation at all — the
-  novelty is gone and the delay is all that remains. A rare, consequential
-  transition can afford one.
-- **Keyboard-initiated actions tolerate less motion than touch.** Pressing a key
-  feels mechanical; touching the screen feels visceral. Animate the second more
-  than the first. Where a frequent interaction still needs acknowledgement, a
-  haptic can substitute for the motion entirely.
-- **~500ms on something frequent reads as frustrating**, however well it is
-  eased. Snappy is under 300ms, and the budget shrinks as frequency rises.
-- **60fps is the floor, not the target.** A dropped frame is more noticeable
-  than a wrong curve.
-- **`prefers-reduced-motion: reduce` is a complete path**, not a fallback: the
-  interface is whole and still.
+- **A change of mind mid-flight reverses from where it is.** An animation
+  that must finish before it can be undone feels broken, because the user
+  already changed their mind and the interface is arguing.
+- **Nothing enters from nothing.** An element scaling up from zero looks
+  conjured; starting almost full-size with the opacity doing the work looks
+  like it was always there.
+- **A thing that opens from a trigger grows from the trigger**, so the eye
+  knows what it belongs to. A dialog, which belongs to the whole screen, grows
+  from the centre.
+- **Motion is never the only signal.** Every animated state change also
+  carries a static cue — a colour, a glyph, a word — so the interface is whole
+  with motion removed.
+- **A reduced-motion setting is a complete path**, not a fallback: the
+  interface is whole and still. It exists because motion makes some people
+  ill, and that outranks every rule above.
 
 ## Personality
 
-Pick one per product; the numbers in `craft/motion-catalogue.md` are given per
-personality. **Corporate** — `cubic-bezier(0.2,0,0,1)`, 200–400ms, no
-overshoot — is the product default. **Premium** is slower and never bounces.
-**Playful** and **Energetic** overshoot, and belong to illustration and
-marketing. Match the motion to the mood of the component: a professional
-dashboard is crisp and fast; a playful thing may bounce.
+Pick one per product and apply it everywhere. A professional tool is crisp,
+fast and never overshoots; a premium one is slower and never bounces; a
+playful or energetic one overshoots, and belongs to illustration and
+marketing. Motion that matches the mood of the thing reads as designed;
+motion that contradicts it reads as pasted in.
 
 ## Motion restraint
 
-Motion is a budget, not a garnish.
-
-- **No custom animation on a high-frequency interaction.** It gets instant
-  feedback, or a minimal `opacity` / `background-color` transition at ≤150ms.
-  Every hover that replays an entrance charges the attention cost again.
-- **Motion is never the only feedback channel.** Every animated state change
-  also carries a static cue — a colour, an icon, a label — so the state is
-  legible with motion removed.
-- **Brief and precise beats prominent.** If a shorter, smaller animation says
-  the same thing, use it.
-
-```css
-/* Good — a frequent hover gets the minimum */
-.row:hover { background-color: var(--surface-hover); transition: background-color 100ms ease-out; }
-
-/* Bad — every hover replays a full entrance */
-.row:hover .row-icon { animation: bounceIn 500ms; }
-```
+Motion is a budget, not a garnish. **No custom animation on a high-frequency
+interaction**; **brief and precise beats prominent**; and if a shorter,
+smaller motion says the same thing, use it.
 
 ## For a landing page
 
-Marketing surfaces earn 2–3 intentional motions — an entrance, something
-scroll-linked, one hover or reveal. Still under the durations above. See
+A marketing surface earns two or three intentional motions — an entrance,
+something tied to scrolling, one reveal — because it is seen once, on purpose.
 `surface/landing-vs-app.md`.
-
-Implementation — stagger, exits, icon swaps, press scale:
-`polish/animation-mechanics.md`.

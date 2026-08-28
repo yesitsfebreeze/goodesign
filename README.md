@@ -4,7 +4,12 @@ One design skill for Claude Code. **Atomic wisdom per topic, indexed for agents,
 read on demand.**
 
 Most design skills are one long file an agent either loads entirely or ignores
-entirely. This one is fifty-odd files. `SKILL.md` is the only page that always loads —
+entirely. This one is forty-odd files — and **no framework is named in any of
+them.** It is about behaviour and its reasons, never the fix: a button is the
+same button in every system. Combine it with the skill for your medium; that
+skill supplies the commands, this one supplies the judgement. Where a number
+appears it is a fact about perception or law with its reason beside it, never
+one implementation's convention. `SKILL.md` is the only page that always loads —
 190 lines of routing — and every other file is self-contained, opens with a
 **Read when** line, and is pulled in only when the task actually needs it.
 
@@ -42,25 +47,23 @@ The index is built for how requests actually arrive:
 ## What's in it
 
 ```
-core/       3   the contract (job · brief · build · gate), the nine beliefs,
-                and the rule that the repo's own design law outranks all of it
-flow/       6   the work before the screen — flow, failure, time, information
-                architecture, first run, and labelling what you assumed
-craft/     10   space · type · colour · shape · states · motion · the motion
-                catalogue · responsive · forms · content. Defaults with reasons
-polish/     7   the implementation underneath — concentric radius, layered
-                shadows, text-wrap, animation mechanics, will-change, hit areas,
-                icons
-surface/    5   terminal UI (the cell grid, ANSI by role, 80×24), the Apple
-                lineage, the landing-vs-app classifier, and shadcn's grammar
-voice/      3   the ten-pattern slop blacklist, the moves that answer it, and
-                ten aesthetic directions with faces by purpose
-process/    9   the component method, the workflows, the mechanical lint, the
-                review pass, the ship gate, the page audit, plan review, building
-                a system from zero, and how the best actually worked
-kit/        1   the starting system as tokens
-personas/   5   who is working — and how to build a new one from research
-canon.md        every claim traced to its source
+core/      3   the contract (job · brief · build · gate), the nine beliefs,
+               and the rule that the product's own design law outranks all of it
+flow/      6   the work before the screen — flow, failure, time, information
+               architecture, first run, and labelling what you assumed
+craft/    11   space · type · colour · shape · icons · states · motion · the
+               motion catalogue · responsive · forms · content — behaviour with
+               its reason, in no system's vocabulary
+surface/   3   the terminal (cells, the user's palette, the keyboard, the
+               narrowest window), the Apple lineage, and landing-vs-app
+voice/     3   the slop blacklist including the 2026 looks, the moves that
+               answer it, and ten directions with faces by purpose
+process/   8   the component method, the workflows, the review pass, the ship
+               gate with its six labels, the page audit, plan review, building
+               a system from zero, and how the best actually worked
+kit/       1   the starting system — every value with its reason
+personas/  6   lead · ux · motion · tui — each built from named practitioners
+canon.md       every claim traced to its source
 ```
 
 ## "Create a button"
@@ -68,7 +71,7 @@ canon.md        every claim traced to its source
 The method the skill is built around. Told to create a component, the designer
 it wears does not produce *a* button — it reads every button already in the
 tree, finds which variant is the house voice, checks what the system ships,
-understands the grammar (tokens, `cva`, `cn`, `asChild`, `data-slot`), decides
+understands the system's grammar by asking the same questions of any system, decides
 the one thing this component gets to decide, and composes it from the system.
 It never traces one from a screenshot. `process/component.md`.
 

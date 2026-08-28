@@ -33,4 +33,4 @@ see.**
 ## Related
 
 - Buttons do not resize when they enter loading — see `craft/states.md`.
-- CLS < 0.1 and LCP budgets — see `process/audit.md`.
+- Nothing shifts after the first meaningful thing appears — `process/audit.md`.

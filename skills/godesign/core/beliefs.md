@@ -36,7 +36,7 @@ Taste here is **debuggable**. Every finding maps to one of these or to a rule in
   real length.
 - **Name the fix in files, tokens and numbers** — never in adjectives. "Feels
   cramped" is not a finding. "`section` padding is 24px against a 64px rhythm
-  everywhere else — `styles/layout.css:40`" is.
+  everywhere else — the layout file, line 40" is.
 - **Build the two best options; do not describe ten.** Describing ten is
   deferral wearing a designer's clothes.
 - **Reduce first, add later.** Take things out until it breaks; put one back.

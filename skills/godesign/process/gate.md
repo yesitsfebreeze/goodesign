@@ -2,55 +2,29 @@
 
 **Read when:** before saying anything is done. Every time.
 
-Report every line with one of four labels:
+Report every line with one of six labels:
 
 ```
-pass (verified)        a command was run or a measurement taken — say which
+pass (verified)        a measurement was taken or a check was run — say which
 pass (inspected)       looked at it and judged it — say what was looked at
 fail (what, where)     named, and fixed or explained
 not verified           could not check — say what remains
 not applicable (why)   the line has no meaning here — a static page has no
                        typed input; a review has no tree to subtract from
-house-law (file:line)  the house has decided otherwise — cite the decision;
+house-law (where)      the house has decided otherwise — cite the decision;
                        do not fix one component against the tree
 ```
 
 A line without a label was not run. **Never claim the gate ran if it did not**;
-a gate reported as eighteen bare passes is a gate that did not run. **This
-table is the one verification format** — `process/review.md`'s Verification
-section is this table, and `process/lint.md` hits land in its rows.
+a gate reported as eighteen bare passes is a gate that did not run. This table
+is the one verification format — `process/review.md`'s Verification section
+is this table.
 
-Cheap verifications that turn *inspected* into *verified* — substitute the
-house's style directory and the house's own `--space-*` values:
-
-```
-2  Scale     perl -0777 -pe 's{/\*.*?\*/}{}gs' <style files> \
-               | grep -nE '(^|[^-])\b(margin|padding|gap|row-gap|column-gap|inset)[a-z-]*\s*:[^;{]*' \
-               | grep -oE '(^|[^-])\b(margin|padding|gap|row-gap|column-gap|inset)[a-z-]*\s*:[^;{]*' \
-               | grep -E '\-?[0-9.]+(px|rem|em)' \
-               | grep -vE '(^|[^0-9.])(4|8|12|16|24|32|48|64|96|128|160)px'
-             — gaps only, in any unit; a negative value is on the scale only if its
-               absolute value is; font sizes, breakpoints, rings and offsets are not
-               gaps, and the token definitions the scale is made of are excluded
-6  Colour    compute the ratio for every text/ground pair in the tokens; reading a
-             ratio someone wrote in a comment is inspected, not verified
-8  States    grep -rnE 'outline: *none|outline-none' — each hit needs a replacement ring
-11 Motion    grep -rnE 'transition(-property)?: *all|transition-all'
-12 Reduced   grep -rn 'prefers-reduced-motion' — zero hits is a fail, not a pass
-14 Widths    `kit/widths.html` — copy it next to the page and run
-             chrome --headless=new --allow-file-access-from-files \
-               --virtual-time-budget=6000 --dump-dom "file://$PWD/widths.html?page=index.html"
-             It iframes the page at 360 · 768 · 900 · 1440 (Chrome will not shrink
-             a window below ~500px, so a bare 360 screenshot is a lie), and reports
-             horizontal scroll, every overflowing element, heading widows (line 5),
-             and computed type sizes (line 4).
-```
-
-## The repo's own gate, when it mutates
-
-If the repo's gate has a build step that writes into the tree and the brief is
-read-only: run every non-mutating step, **name the one skipped, and report the
-gate as *partial*** — never as run.
+**What "verified" means.** A number was measured, a search was run, a page was
+opened at the width and looked at. *How* depends entirely on what you are
+building in, and this skill does not know — the skill for your medium
+supplies the commands. What this skill insists on is the label: if you did
+not measure, it is *inspected*, and you say so.
 
 ```
 0a Job          The stated job is done in the fewest honest steps
@@ -58,45 +32,51 @@ gate as *partial*** — never as run.
 0c Failure      Every error says what to do; nothing destructive without undo
 0d Work         No typed input is ever lost; position preserved on return
                 (0b–0d are app lines; a static page reports not applicable)
-0e Time         Feedback <100ms · no spinner <300ms · skeleton only >1s
+0e Time         Feedback inside a tenth of a second · no spinner for a wait
+                under a third of a second · a skeleton only for a real wait
 1  Message      One idea, received in the stated order
 2  Scale        Every gap on the spacing scale; no off-scale value
 3  Rhythm       Section > block > line, three clear magnitudes; heading gap 2:1
-4  Type         Body set first · measure 60–75ch · ≤6 steps · tracking set
+4  Type         Body set first · measure 60–75 characters · ≤6 steps · tracking set
 5  Widows       No single-word last line in any heading
-6  Colour       Roles not pigments · one accent, rare · body ≥4.5:1 · UI ≥3:1
+6  Colour       Roles not pigments · one accent, rare · body 4.5:1 · glyphs 3:1
 7  Meaning      Nothing carried by hue alone
-8  States       hover/focus-visible/active/disabled/loading/empty/error, all
-9  Targets      44px touch · 40px dense desktop · hit area ≥ visual area
-10 Keyboard     Full flow on keys · Esc/Enter · focus trapped and restored
+8  States       hover/focus/active/disabled/loading/empty/error, all present
+9  Targets      Fingertip-sized on touch; hit area ≥ visual area; none overlap
+10 Keyboard     Full flow on keys · Escape/Enter · focus trapped and restored
 10b Parity      Keyboard and screen-reader paths complete the same job
-11 Motion       <300ms on product · press ≤160ms · transform/opacity only ·
-                interruptible · nothing animates on a 100×/day action
-12 Reduced      prefers-reduced-motion path complete and still
-13 Content      Real copy, longest string, 1 item and 12 items, empty case
-14 Widths       360 · 768 · 900 (the awkward middle) · 1440
+11 Motion       Nothing animates on a many-times-a-day action · nothing on a
+                product surface long enough to notice · every animation
+                reversible mid-flight · only what moves without relayout
+12 Reduced      The reduced-motion path is complete and still
+13 Content      Real copy, longest string, 1 item and 12 items, empty case,
+                the longest language
+14 Widths       Narrow · the awkward middle · wide — actually opened, not inferred
 15 Consistency  Nothing invented that the tree already says another way
 16 Tells        None of the generic-default tells present without an argument
 17 Subtraction  One more thing removed, and the last removal put back
 18 Honesty      Assumptions labelled as assumptions; the disproof named;
-                invented product facts in ONE list: "assumed: …" — craft/content.md
+                invented product facts in ONE list: "assumed: …"
 ```
 
 ## Terminal surfaces
 
-Replace lines 9, 11, 12 and 14 with the decision filter in `surface/tui.md`:
+Replace lines 9, 11, 12 and 14 with the decision filter in
+`surface/terminal.md`:
 
 ```
-T1 Cells        Expressible as characters and ANSI sequences only
-T2 Maths        Layout is integer row/column; nothing escapes its region
-T3 Mouseless    Fully usable on the keyboard alone
-T4 80×24        Works at the minimum viable terminal size
-T5 Diff         Only changed cells written; one flush per frame
-T6 Resize       Degrades gracefully on SIGWINCH
-T7 Restore      Cursor shown, SGR reset, alternate screen exited on exit
+T1 Cells        Said in characters and their styles alone
+T2 Whole cells  Layout reduces to whole cells; nothing escapes its box
+T3 Mouseless    Complete on the keyboard alone
+T4 Narrow       Survives the narrowest window the environment produces
+T5 Redraw       Only the change is redrawn, in one write
+T6 Resize       Degrades gracefully when the window changes mid-use
+T7 Restore      Cursor, styles and the user's screen returned on exit
 ```
 
 ## The repo's own gate
 
-`just check`, `npm run lint`, whatever it is — **it runs too.** This gate does
-not replace it. See `core/house-law.md`. Mutating steps: the paragraph above.
+Whatever the product's own check is — **it runs too.** This gate does not
+replace it. If it has a step that writes into the tree and you are read-only,
+run every other step, **name the one skipped, and report the gate as
+*partial*** — never as run.
