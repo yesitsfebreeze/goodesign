@@ -4,9 +4,8 @@
 workflow ends at the gate. None skips the house law.
 
 The first question is always the same: **what artefact exists, and what is
-the verb?** A brief with no product is a *flow* or a *system* question. A
-product in hand is a *build* or a *review*. Motion as the subject is a
-*motion* pass whether or not anything is built.
+the verb?** A brief with no product is a *flow* or a *system* question. A product in hand is a *design pass* or a *review*. Motion as the subject is a
+*motion* pass whether or not anything exists yet.
 
 ---
 
@@ -14,7 +13,7 @@ product in hand is a *build* or a *review*. Motion as the subject is a
 
 `process/component.md`. Does the surface exist → house law → every relative of
 the thing → what the system ships → its grammar → decide what this one is →
-compose, never trace → build the states → gate → six-line report.
+compose, never trace → design the states → gate → six-line report.
 
 ## New page
 
@@ -45,14 +44,14 @@ Persona `ux` leads; `lead` takes over at the screen.
 process/review.md       run the pass FIRST, on what is there; stop designing at
                         the first failing level — that level is the scope
 process/methods.md      the smallest structural move; cut scope before effort
-core/house-law.md       what the tree already says; do not invent a second way
+core/house-law.md       what the product already says; do not invent a second way
 then the craft/ files for the level that failed
 ```
 
 A redesign that starts at the pixel on a page whose flow fails is the most
 common wasted week in this discipline.
 
-## Review of a built page or component
+## Review of an existing page or component
 
 ```
 process/review.md       the nine levels; the report format
@@ -60,21 +59,20 @@ voice/slop.md           pass 4
 process/gate.md         every line labelled
 ```
 
-The commands that turn *inspected* into *verified* come from the skill for
-whatever the thing is built in; this skill supplies the labels and the lines.
+Every line labelled *seen* or *judged*; the review is advice, and says which
+of its findings it looked at and which it reasoned about.
 
 ## Audit of a whole site, page by page
 
 `process/audit.md`.
 
-## Review of a plan or PRD, before anything is built
+## Review of a plan, before anything is made
 
 `process/plan-review.md`. The output is a better plan, not a document about it.
 
 ## Design system from nothing
 
-`process/design-system.md` → `kit/defaults.md` → `voice/directions.md`. Ends
-in a written system with a decisions log.
+`process/design-system.md` → `kit/defaults.md` → `voice/directions.md`. Ends in a written language with a decisions log.
 
 ## Motion pass — "make this animate", "this feels janky"
 
@@ -86,13 +84,13 @@ process/review.md           slow it down; look again tomorrow
 
 Persona `motion` leads.
 
-## Design-to-build — from a mockup, a picture, a sketch
+## From a mockup, a picture, a sketch
 
 The mockup is a *brief*, not a spec. Extract the decisions it made (type,
 scale, colour roles, the one distinctive move) into `core/contract.md`'s
-seven brief lines, then build from the brief — **not by measuring pixels off
-the image.** A mockup traced pixel-for-pixel inherits every off-scale value it
-contains. Where the mockup and the house tokens disagree, the tokens win and
+seven brief lines, then design from the brief — **not by measuring the
+image.** A mockup traced pixel-for-pixel inherits every off-scale value it
+contains. Where the mockup and the house's named values disagree, the values win and
 the disagreement is recorded.
 
 ## Deslop — "this looks generated"
@@ -108,8 +106,8 @@ Do not add. Remove first; then commit to one thing.
 
 ## Reverse-engineer a reference — "how does Linear do this"
 
-Look, name the mechanism in words and numbers, take **one** thing, close the
-tab. `voice/commitment.md`. The output is a sentence in the brief's
+Look, name the mechanism in words and numbers, take **one** thing, and stop
+looking. `voice/commitment.md`. The output is a sentence in the brief's
 `Reference:` line, never a copy.
 
 ## Terminal

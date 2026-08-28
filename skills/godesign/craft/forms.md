@@ -33,7 +33,7 @@
 Every field declares its kind — email, phone, number, date, a search — so the
 device can offer the right keyboard, autofill what it already knows, and
 stop spell-checking a username. A phone field that opens a letter keyboard is
-a defect. A form that makes the user retype what their browser has stored is
+a defect. A form that makes the user retype what their device has stored is
 asking for what it could have derived — `flow/flow.md`.
 
 ## Scroll and focus

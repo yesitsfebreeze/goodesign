@@ -58,8 +58,7 @@ For anything dragged, swiped or pinched:
 - **Feedback inside about a tenth of a second of any input.** Below that the
   interface reads as responding; above it, as ignoring the user.
 - **A wait under about four tenths of a second reads as instant** (the
-  Doherty threshold). Spend engineering to get there before spending design
-  on a nicer spinner.
+  Doherty threshold). Ask for that speed before asking for a nicer spinner.
 - **No spinner for a wait shorter than about a third of a second** — it
   appears and vanishes, and the flicker is worse than the wait.
 - **A target is at least the size of a fingertip on touch** — around 44 units

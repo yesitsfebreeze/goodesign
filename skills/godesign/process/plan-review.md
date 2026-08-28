@@ -1,7 +1,7 @@
-# Reviewing a plan, before implementation
+# Reviewing a plan, before anything is made
 
 **Read when:** reviewing a plan, a spec, or a PRD that contains UI — *not* a
-live site. Use `process/audit.md` for a built page.
+live site. Use `process/audit.md` for an existing page.
 
 **The output is a better plan, not a document about the plan.** Find the missing
 design decisions and add them to the plan. Do not start implementing.
@@ -57,8 +57,8 @@ patterns? *Fix to 10:* rewrite every vague description with a specific
 alternative. Run `voice/slop.md` and `surface/landing-vs-app.md`.
 
 **5 · Design system alignment.** Does the plan align with the house law? If a
-`DESIGN.md` or token set exists, annotate the plan with the specific tokens and
-components. If none exists, flag the gap. Any new component: does it fit the
+design system or set of named values exists, annotate the plan with the
+specific values and parts. If none exists, flag the gap. Any new component: does it fit the
 existing vocabulary, or invent a second way to say the same thing?
 
 **6 · Responsive and accessibility.** Keyboard nav, screen readers, contrast,
@@ -67,7 +67,7 @@ viewport gets an intentional design, not "stacked on mobile".
 
 **7 · Unresolved design decisions.** List every genuine choice still open, with
 a recommendation and the reason. An unlisted open decision becomes an accident
-at implementation time.
+when it is made.
 
 ## How to ask
 
@@ -77,5 +77,5 @@ If a pass has no issues, say so and move on.
 ## Required outputs
 
 - **What is not in scope** — named, so it is a decision and not an omission.
-- **What already exists** — the components and tokens this plan should reuse.
+- **What already exists** — the parts and values this plan should reuse.
 - **The unresolved decisions list.**

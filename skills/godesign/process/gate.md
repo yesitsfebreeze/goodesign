@@ -1,37 +1,33 @@
-# The ship gate
+# The gate
 
 **Read when:** before saying anything is done. Every time.
 
-Report every line with one of six labels:
+This skill advises. The gate is the designer walking the interface and saying,
+line by line, what was looked at and what was found. Report every line with
+one of six labels:
 
 ```
-pass (verified)        a measurement was taken or a check was run — say which
-pass (inspected)       looked at it and judged it — say what was looked at
-fail (what, where)     named, and fixed or explained
-not verified           could not check — say what remains
-not applicable (why)   the line has no meaning here — a static page has no
-                       typed input; a review has no tree to subtract from
-house-law (where)      the house has decided otherwise — cite the decision;
-                       do not fix one component against the tree
+seen           looked at it, in the real thing, at real size — and it holds
+judged         reasoned about it from what was described, not seen — say so
+fail           what, where — named, and resolved or explained
+not seen       could not look — say what remains
+not applicable the line has no meaning here — a static page has no typed input
+house rule     the product has decided otherwise — cite the decision; do not
+               fix one thing against the rest of the product
 ```
 
-A line without a label was not run. **Never claim the gate ran if it did not**;
-a gate reported as eighteen bare passes is a gate that did not run. This table
-is the one verification format — `process/review.md`'s Verification section
-is this table.
-
-**What "verified" means.** A number was measured, a search was run, a page was
-opened at the width and looked at. *How* depends entirely on what you are
-building in, and this skill does not know — the skill for your medium
-supplies the commands. What this skill insists on is the label: if you did
-not measure, it is *inspected*, and you say so.
+A line without a label was not walked. **Never claim the gate was walked if it
+was not**; a gate reported as eighteen bare passes is a gate nobody walked.
+*Seen* means you looked; *judged* means you reasoned. Both are honest; only
+confusing them is not.
 
 ```
 0a Job          The stated job is done in the fewest honest steps
 0b States       Entry, empty, partial, slow, failed, returning — all designed
 0c Failure      Every error says what to do; nothing destructive without undo
 0d Work         No typed input is ever lost; position preserved on return
-                (0b–0d are app lines; a static page reports not applicable)
+                (0b–0d are lines for an application; a static page reports
+                not applicable)
 0e Time         Feedback inside a tenth of a second · no spinner for a wait
                 under a third of a second · a skeleton only for a real wait
 1  Message      One idea, received in the stated order
@@ -51,8 +47,8 @@ not measure, it is *inspected*, and you say so.
 12 Reduced      The reduced-motion path is complete and still
 13 Content      Real copy, longest string, 1 item and 12 items, empty case,
                 the longest language
-14 Widths       Narrow · the awkward middle · wide — actually opened, not inferred
-15 Consistency  Nothing invented that the tree already says another way
+14 Widths       Narrow · the awkward middle · wide — actually looked at
+15 Consistency  Nothing invented that the product already says another way
 16 Tells        None of the generic-default tells present without an argument
 17 Subtraction  One more thing removed, and the last removal put back
 18 Honesty      Assumptions labelled as assumptions; the disproof named;
@@ -74,9 +70,7 @@ T6 Resize       Degrades gracefully when the window changes mid-use
 T7 Restore      Cursor, styles and the user's screen returned on exit
 ```
 
-## The repo's own gate
+## The product's own review
 
-Whatever the product's own check is — **it runs too.** This gate does not
-replace it. If it has a step that writes into the tree and you are read-only,
-run every other step, **name the one skipped, and report the gate as
-*partial*** — never as run.
+Whatever the product's own sign-off is — **it happens too.** This gate does
+not replace it. See `core/house-law.md`.

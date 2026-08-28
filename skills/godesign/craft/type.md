@@ -52,7 +52,8 @@ Curly quotes, not straight. `…` not `...`. "Saving…" not "Saving...".
 
 ## When there are no web fonts
 
-A self-contained file, an email, a CSP with no font host: the named face is a
+A surface where no face of your choosing can load — an email, a locked
+environment: the named face is a
 wish and **the fallback stack is the type decision.** Choose it as such —
 `Iowan Old Style, Charter, Georgia` is a decision; `serif` is not — write the
 stack you expect to render into the brief's `Type:` line, and check the page

@@ -19,7 +19,7 @@ light, their years of habit. **Reach for colour by role — error, success,
 warning, muted, emphasis — and let the environment supply the pigment.** A
 hardcoded colour overrides a decision the user already made and will clash
 with every other tool in their session. The exception is a terminal you
-embed in something else (a browser, an app), which has no user palette and
+embed inside another program, which has no user palette and
 must be given one deliberately.
 
 ## Hierarchy comes from the cheapest signal first

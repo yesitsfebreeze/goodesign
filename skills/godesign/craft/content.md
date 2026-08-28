@@ -6,10 +6,10 @@ after it.
 - **Copy is design, and it is written before the layout.** Placeholder text
   hides every problem worth finding.
 - **Button labels are verbs naming their result**: "Send invite", not "Submit".
-  "Save API key", not "Continue".
+  "Save changes", not "Continue".
 - **Sentence case** in UI. Title Case is a decorative choice, and rarely earns
   it.
-- **Active voice.** "Install the CLI", not "The CLI will be installed".
+- **Active voice.** "Install the app", not "The app will be installed".
 - Numbers, dates and currency formatted for the locale; long numbers set in
   tabular figures.
 - Loading states end with `…` — "Saving…", not "Saving...".

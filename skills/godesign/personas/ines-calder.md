@@ -1,7 +1,7 @@
 ---
 name: Ines Calder
 id: ux
-profession: product/design engineer
+profession: product designer
 description: The user's path through the system, before the chrome around it.
 ---
 

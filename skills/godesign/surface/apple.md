@@ -59,7 +59,7 @@ rhythm descends from there, not from any operating system.
 | Clarity | body type set first, measure 60–75ch, ornament removed — `craft/type.md` |
 | Deference | one accent used rarely, neutral passive surfaces — `craft/colour.md` |
 | Depth | two elevation levels maximum, hierarchy by space — `craft/shape-and-depth.md` |
-| Consistency | the tree's existing pattern beats a novel one — `core/house-law.md` |
+| Consistency | the product's existing pattern beats a novel one — `core/house-law.md` |
 
 ## What "make it look Apple" usually means
 

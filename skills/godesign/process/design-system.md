@@ -1,6 +1,7 @@
-# Building a design system from nothing
+# A design language from nothing
 
-**Read when:** a project has no `DESIGN.md`, no tokens, and no precedent. The
+**Read when:** a product has no design language, no named values, and no
+precedent. The
 output is a written source of truth, not a mood board.
 
 Start from `kit/defaults.md` and replace every value with a reason.
@@ -41,7 +42,7 @@ Body size, measure, leading · tracking by size · figure style
 ## Colour
 The ground · the ink ramp (8 steps, one temperature)
 Exactly one accent + its ink-safe variant
-Semantic roles · every role as a token name, never a hex in a component
+Semantic roles · every role named, never a raw value where a role should be
 
 ## Spacing
 The scale · the section / block / line rhythm · container padding by size
@@ -64,6 +65,6 @@ re-litigated every quarter by people who cannot see what was already rejected.
 
 ## Previewing
 
-Where fonts and colours are still open, build a **preview page** showing the
+Where fonts and colours are still open, make a **preview** showing the
 real candidates at real sizes with real copy — not swatches. Two options, looked
 at. Never ten described.

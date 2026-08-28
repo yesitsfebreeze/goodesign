@@ -1,6 +1,6 @@
 # The contract — four moves, in order
 
-**Read when:** starting any design or build task. This runs before anything else.
+**Read when:** starting any design task. This runs before anything else.
 
 The order matters more than any single rule in this skill: **the job, then the
 flow, then the screen, then the pixel.** A beautifully set screen solving the
@@ -26,8 +26,8 @@ Failure:     the likeliest way this goes wrong, and what the interface does then
 
 ## 1 · The Brief
 
-Before the first line of markup, state these seven lines. Short, concrete,
-numbers where numbers belong. No line may be "TBD".
+Before the first mark, state these seven lines. Short, concrete, numbers where
+numbers belong. No line may be "TBD".
 
 ```
 Saying:      the one thing this screen says, in one sentence
@@ -39,7 +39,7 @@ Colour:      ground, ink, one accent, and where the accent is allowed to appear
 Risk:        the one thing most likely to look generic here, and the answer
 ```
 
-## 2 · The Build
+## 2 · The Design
 
 Work `flow/` first for anything with more than one screen; a landing page has
 one flow — the fold, then the action — and goes straight to `craft/`. **Space
@@ -51,9 +51,9 @@ three". Placeholder copy hides every problem worth finding.
 
 ## 3 · The Gate
 
-Before saying it is done, run `process/gate.md` and report it as a list of
-pass/fail lines. A fail is named and fixed, or named and explained. "Looks
-good" is not a gate result. **Never claim the gate ran if it did not.**
+Before saying it is done, walk `process/gate.md` and report it line by line. A
+fail is named and resolved, or named and explained. "Looks good" is not a
+gate result. **Never claim the gate was walked if it was not.**
 
-For a review instead of a build, run `process/review.md` and report under its
+For a review instead of a design, run `process/review.md` and report under its
 rules. Same gate at the end.

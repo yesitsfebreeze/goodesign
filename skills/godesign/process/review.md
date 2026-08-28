@@ -5,8 +5,7 @@
 Run in this order — the order a person actually meets the product in. **Stop
 *designing* at the first level that fails.** A typographic fix on a screen
 whose flow is wrong is wasted work, and so is a flow fix on a screen answering
-the wrong job. **But levels 5–8 are still checked** — with whatever the medium offers —
-because a HIGH at level 5 or 6 (a focus ring removed, a layout that ratchets
+the wrong job. **But levels 5–8 are still walked** — because a HIGH at level 5 or 6 (a focus ring removed, a layout that ratchets
 on resize) blocks the ship regardless of where the design fails, and a report
 that stopped at a LOW on level 1 would never have found it.
 
@@ -29,7 +28,7 @@ that stopped at a LOW on level 1 would never have found it.
 6  Motion          does it explain a relationship, is it short enough to go
                    unnoticed, does it survive reduced motion.
 7  Responsive      small width, then the awkward middle.
-8  Consistency     does this repeat something already in the tree, or invent a
+8  Consistency     does this repeat something already in the product, or invent a
                    second way to say the same thing?        → core/house-law.md
 ```
 
@@ -38,7 +37,7 @@ that stopped at a LOW on level 1 would never have found it.
 When motion is involved, **replay it as slowly as the medium allows** and
 walk every state — hover, focus, active, loading, empty. What feels off slowed
 down is what is subtly wrong at full speed. Where the medium gives no way to
-slow it, the check is *not verified* and the report says so.
+slow it, the line is *not seen* and the report says so.
 
 ## Where the heuristics land
 
@@ -53,42 +52,40 @@ taste — and it is labelled as taste.**
 
 - **Seven findings maximum**, ordered by what a visitor notices first. A list of
   thirty is a way of deciding nothing.
-- **Each finding names the file, the token and the number.** "Feels cramped" is
-  not a finding. "`section` padding is 24px against a 64px rhythm everywhere
-  else — the layout file, line 40" is.
+- **Each finding names where on the screen, what, and the number.** "Feels
+  cramped" is not a finding. "The section padding on the pricing screen is 24
+  against a 64 rhythm everywhere else" is.
 - **Say what the fix costs.**
-- Where two directions are genuinely open, **build both and look at them** —
-  do not describe ten. In a read-only review, name both in one row and say
-  which you would build first.
+- Where two directions are genuinely open, **make both and look at them** —
+  do not describe ten. Where you may only advise, name both in one row and say
+  which you would make first.
 - Never review with placeholder copy. Real content at real length, or it is not
   a review.
 
-## Where the commands come from
+## What this review is
 
-This skill says *what* to check and how to label it. *How* — the search, the
-measurement, the tool — belongs to the skill for whatever the thing is built
-in, and skills combine. If no such skill is loaded, the check is *inspected*
-and says so; it is never *verified* by assertion.
+Advice. It says what must change, where, and why, and what it costs. It does
+not change it. A finding you looked at is *seen*; one you reasoned about from
+a description is *judged*; both are honest, and the report says which.
 
 ## For a whole site, page by page
 
-`process/audit.md` is the ~80-item instrument for sweeping many pages. A single
-page or component from source uses this file. Same severities, same report.
+`process/audit.md` is the ~80-item instrument for sweeping many pages. A single page or component uses this file. Same severities, same report.
 
-## For a plan, before implementation
+## For a plan, before anything is made
 
 Use `process/plan-review.md` — the 0–10 rating method and seven passes.
 
 ## The report
 
 **Scope first.** State the mode, the exact scope, the framework and styling
-conventions, and any boundary. Then show what was actually inspected:
+conventions, and any boundary. Then show what was actually looked at:
 
-| Category | Evidence inspected | Result |
+| Category | What was looked at | Result |
 |---|---|---|
-| Space | files, components, states, or checks run | findings count · `Clear` · `Not reviewed` — with a reason |
+| Space | the screens, components and states looked at | findings count · `Clear` · `Not reviewed` — with a reason |
 
-**Never imply an uninspected surface was reviewed.**
+**Never imply a surface you did not look at was reviewed.**
 
 **Findings** — one table per principle, every change made or proposed, one row
 per diff. A repeated systemic issue is one row listing every location.
@@ -104,7 +101,7 @@ MEDIUM   a noticeable usability or consistency problem
 LOW      isolated polish — reported only in a full review
 ```
 
-Location is the file and line; with no source, the exact screen and component. *Why* names the principle and the user impact. Omit a principle's
+Location is the screen and the element. *Why* names the principle and the user impact. Omit a principle's
 table if nothing was found. Never pad to a count.
 
 **Considered but rejected** — one to five real candidates and why they did not
@@ -114,14 +111,13 @@ make the list. Do not invent filler; if there are fewer, say so.
 |---|---|---|
 | the card, line 28 | increase the shadow | depth already matches the shared surface role; changing one card reduces consistency |
 
-**Verification** — the gate table from `process/gate.md`, one row per line,
-each labelled *verified (how)* · *inspected* · *fail* · *not verified* ·
-*not applicable* · *house-law*. Where the product's own gate mutates and the
-brief is read-only, the row says *partial* and names the step skipped.
+**The gate** — the table from `process/gate.md`, one row per line,
+each labelled *seen* · *judged* · *fail* · *not seen* · *not applicable* ·
+*house rule*.
 
 **Verdict** — `Block` if any HIGH remains · `Needs changes` if only MEDIUM or
-LOW remain · `Approve` only with no actionable finding. List every unverified
-check beside the verdict.
+LOW remain · `Approve` only with no actionable finding. List everything not
+seen beside the verdict.
 
-With no findings: say "No actionable findings", still report verification and
+With no findings: say "No actionable findings", still report the gate and
 the rejected candidates, and end with `Approve`.

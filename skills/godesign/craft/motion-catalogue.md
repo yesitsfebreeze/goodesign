@@ -2,8 +2,7 @@
 
 **Read when:** you have decided *whether* something animates (`craft/motion.md`)
 and need the effect. Each entry says what the motion does for the user and
-what makes it fail. The implementation belongs to whatever you are building
-in; the behaviour is the design.
+what makes it fail. How it is made belongs to whoever makes it; the behaviour is the design.
 
 ## Entrances
 

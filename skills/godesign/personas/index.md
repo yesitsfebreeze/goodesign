@@ -15,7 +15,7 @@ never appear in the body, so no persona assumes any.
 | id | name | field | optimizes for |
 |---|---|---|---|
 | `lead` | Wren Adachi | design lead — product & UI | the screen saying one thing, and the pixel that proves it |
-| `ux` | Ines Calder | product/design engineer | the user's path through the system, before the chrome |
+| `ux` | Ines Calder | product designer | the user's path through the system, before the chrome |
 | `tui` | Ash Lindqvist | terminal interface designer | the cell grid, the keyboard, and the narrowest window you will meet |
 | `motion` | Rio Castellanos | motion designer for interfaces | the passage between two states — and whether it should exist |
 
@@ -33,7 +33,7 @@ pixels; Ash does not.
 ```
 "design this page" · "does this look right" · "make it feel finished"   → lead
 "is this flow right" · "what's the IA" · "where does this go"           → ux
-anything rendering in a terminal, TUI, CLI output, xterm                → tui
+anything that lives in a terminal                                        → tui
 "animate this" · "feels janky" · easing, timing, springs, gestures      → motion
 ```
 

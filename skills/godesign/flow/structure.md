@@ -22,5 +22,5 @@ A heading states what the area *is* or what the user *can do*: "Selected KPIs",
 ## Naming is design
 
 `recentItems` versus `history` is a decision users feel. Pick the word the user
-would use unprompted, then use it everywhere — in the UI, the URL, the API, the
-support docs and the code.
+would use unprompted, then use it everywhere — on the screen, in the address, in the help, and
+wherever the makers speak of it.

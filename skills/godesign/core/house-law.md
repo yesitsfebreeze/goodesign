@@ -1,59 +1,58 @@
 # House law wins
 
-**Read when:** the repo has any design law of its own — before you apply a
+**Read when:** the product has any design law of its own — before you apply a
 single default from this skill.
 
-If the repo has its own design law — an `AGENTS.md`, a `CLAUDE.md`, a token
-file, a brand package, a `DESIGN.md` — **read it first, and it outranks
+If the product has its own design law — written design rules, a brand book, a
+design system, a set of named values — **read it first, and it outranks
 everything in this skill.** You did not write it.
 
 ## The rule
 
 - Where taste and house law collide, **house law wins**.
-- If the law is wrong, the move is a **written decision record** in the repo's
-  own format, landing in the same commit as the change. Never a quiet exception.
-- The repo's own gate — `just check`, `npm run lint`, whatever it is — runs.
-  `process/gate.md` does not replace it. If it has a step that writes into the
-  tree and you are read-only, run every other step, name the one skipped, and
-  report it as *partial*.
-- **If the repo carries its own copy of a design persona or review order** —
-  an older fork of this skill, a `designer/` directory — the repo's copy governs
-  the *rules* (colour, tokens, copy, memo path) and this skill's *order* (the
-  job and the flow before the screen) still governs the pass. Say which you
-  used for what.
+- If the law is wrong, the move is a **written decision** in the product's own
+  way of recording decisions, made alongside the change. Never a quiet
+  exception.
+- If the product has its own review ritual — a brand check, a sign-off — it
+  happens too. `process/gate.md` does not replace it.
+- **If the product carries its own copy of a design persona or review order** —
+  an older fork of this skill — the product's copy governs the *rules* (colour,
+  values, copy) and this skill's *order* (the job and the flow before the
+  screen) still governs the pass. Say which you used for what.
 
 ## Finding the law
 
 In rough order of authority:
 
 ```
-AGENTS.md / CLAUDE.md          — stated rules, highest authority
-DESIGN.md                      — the design system of record
-the token file                 — the real values, and what is actually allowed
-the theme or config            — the scale in force
-an existing component of the same kind — the strongest precedent there is
+the written design rules       — stated rules, highest authority
+the design system of record    — the language as decided
+the named values               — the real colours, sizes and durations,
+                                 and what is actually allowed
+an existing thing of the same kind — the strongest precedent there is
 ```
 
-**Greenfield — no tree, no law.** Say so in one line and move on to
+**Greenfield — no product, no law.** Say so in one line and move on to
 `kit/defaults.md`; do not go looking for a component method to apply to
 nothing.
 
-**Consistency is a feature.** Before inventing anything, check whether the tree
-already says it another way. Two ways to do one thing is a bug, and one that
-spreads.
+**Consistency is a feature.** Before inventing anything, check whether the
+product already says it another way. Two ways to do one thing is a bug, and
+one that spreads.
 
-## Express the fix in the project's own system
+## Express the change in the product's own vocabulary
 
-Before changing anything, identify how the product expresses style — its
-tokens, its variants, its conventions — and express the change in that
+Before changing anything, identify how the product expresses style — its named
+values, its variants, its conventions — and express the change in that
 vocabulary. **Never introduce a second way of styling to apply a polish fix.**
 Likewise never introduce a typeface to satisfy a checklist: a type change is a
 decision, made in `craft/type.md`, not a side effect.
 
-## Reaching for the role, never the pigment
+## Reach for the role, never the pigment
 
-Wherever the house has tokens, use them. `--text-body`, `--surface-page`,
-`--surface-raised`, `--border-subtle`, `--focus-ring`. A colour, size or
-duration named for what it looks like will be used for the wrong job within a
-month. If a value you need is not in the token set, **it does not exist in that
-system, and inventing it is the error** — raise it as a decision instead.
+Wherever the house has named its values, use the names: the body text colour,
+the page surface, the raised surface, the subtle edge, the focus ring. A colour,
+size or duration named for what it looks like will be used for the wrong job
+within a month. If a value you need has no name in that system, **it does not
+exist in that system, and inventing it is the error** — raise it as a decision
+instead.

@@ -25,7 +25,7 @@ the sequence before the surface, and the failure paths before the happy one.
 - **Recognition over recall.** Show the options, do not make people remember
   them across a step boundary. Carry context forward visibly.
 - **Match the user's language, not the system's.** "Draft", not
-  "unpublished_state". A label that names an implementation detail is a defect.
+  "unpublished_state". A label that names how the thing was made is a defect.
 
 ## The state table
 

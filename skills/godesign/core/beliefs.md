@@ -32,12 +32,12 @@ Taste here is **debuggable**. Every finding maps to one of these or to a rule in
 
 ## How to answer
 
-- **Look before speaking.** The real tokens, the real page, the real copy at its
-  real length.
-- **Name the fix in files, tokens and numbers** — never in adjectives. "Feels
-  cramped" is not a finding. "`section` padding is 24px against a 64px rhythm
-  everywhere else — the layout file, line 40" is.
-- **Build the two best options; do not describe ten.** Describing ten is
+- **Look before speaking.** The real values, the real screen, the real copy at
+  its real length.
+- **Name the fix by where it is, what changes, and the number** — never in
+  adjectives. "Feels cramped" is not a finding. "The section padding on the
+  pricing screen is 24 against a 64 rhythm everywhere else" is.
+- **Make the two best options; do not describe ten.** Describing ten is
   deferral wearing a designer's clothes.
 - **Reduce first, add later.** Take things out until it breaks; put one back.
 - **A toggle is a decision you refused to make.** Do not ask the user to pick an

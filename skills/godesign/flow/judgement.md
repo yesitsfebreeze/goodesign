@@ -15,7 +15,7 @@
 Three labels, used honestly:
 
 ```
-Known       — observed in the product, the data, the tokens, or the repo
+Known       — observed in the product, the data, or the named values
 Assumed     — a reasonable guess, stated as a guess, with the disproof named
 Taste       — traceable to no rule in this skill; say so and move on
 ```

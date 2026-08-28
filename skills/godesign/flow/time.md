@@ -3,8 +3,7 @@
 **Read when:** anything waits — a fetch, a save, a navigation, an upload.
 
 - **Show system status inside 100ms of every input.** Silence reads as broken.
-- **Under ~400ms an operation reads as instant** — the Doherty threshold. Spend
-  the engineering to get there before spending design on a nicer spinner.
+- **Under ~400ms an operation reads as instant** — the Doherty threshold. Ask for that speed before designing a nicer spinner.
 - **Preserve position and scroll on return.** Losing someone's place is a small
   cruelty that compounds.
 
