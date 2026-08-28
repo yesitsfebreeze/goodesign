@@ -28,6 +28,9 @@ Space is the primary material. Everything else follows from it.
   an icon centred in a circular button sits off; a triangle in a play button is
   always nudged right. Trust the eye over the number when they disagree, and
   write the correction down. Mechanics: `polish/radius-and-optics.md`.
+- **Rules between list items are the same admission as rules between
+  blocks.** Try 24px of gap first; keep the rule only where rows are rows — a
+  table, a ledger — and the eye must track across.
 - **Everything aligns to something.** An element aligned to nothing is a bug,
   not a style.
 - **Empty may stay empty.** The urge to fill the right third is the urge to ruin

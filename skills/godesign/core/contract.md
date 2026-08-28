@@ -41,8 +41,9 @@ Risk:        the one thing most likely to look generic here, and the answer
 
 ## 2 · The Build
 
-Work `flow/` first, then `craft/`. **Space and type are decided first and
-everything else is derived from them.**
+Work `flow/` first for anything with more than one screen; a landing page has
+one flow — the fold, then the action — and goes straight to `craft/`. **Space
+and type are decided first and everything else is derived from them.**
 
 Real copy at real length, real data, the longest plausible string — never
 placeholder text, never lorem, never "Feature one / Feature two / Feature

@@ -32,7 +32,10 @@ HYBRID                a marketing shell with app-like sections
 - **Hero is full-bleed, edge-to-edge.** No inset, tiled, or rounded variants.
 - **Hero budget:** brand, one headline, one supporting sentence, one CTA group,
   one image. That is all of it.
-- **No cards in the hero.** Cards only when the card *is* the interaction.
+- **No cards in the hero.** Cards only when the card *is* the interaction. A
+  rendering of the product drawn with real data is the *image*, not a card,
+  even on a panel; a panel holding a headline, a sentence and a button is a
+  card.
 - **One job per section:** one purpose, one headline, one short supporting
   sentence.
 - **Motion:** 2–3 intentional motions minimum — an entrance, something

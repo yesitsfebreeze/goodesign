@@ -41,8 +41,9 @@ footer; a page without them is not shippable, whatever it looks like.
 
 A landing page with no spec invents prices, hosting locations, integrations,
 customer names and quotes. **Never fabricate a testimonial.** Every invented
-product fact is flagged in the report as *assumed — confirm before shipping*,
-in one list, so the client can strike each one. Real copy at real length does
+product fact goes into **one list under gate line 18**, as
+`assumed: 12 €/seat, Frankfurt hosting, DATEV export, …` — so the client can
+strike each one, and two agents produce the same shape. Real copy at real length does
 not mean real-sounding claims.
 
 ## The deletion test

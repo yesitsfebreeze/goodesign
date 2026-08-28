@@ -56,6 +56,12 @@ decision. A page in look 1 with an argument is fine; a page in look 1 because
 that is what a tasteful page looks like this year is the same failure as the
 purple gradient, one generation later.
 
+**Two smaller reflexes that survive every list**: the uppercase, tracked,
+small label over every section (`.eyebrow`, `.label`, `thead th`) — an
+editorial habit that needs an argument like any other; and the primary +
+secondary button pair under the hero, whatever the labels say. One action, or
+an argument for two.
+
 **Invented facts are a tell too.** A price, a hosting location, an
 integration, a customer quote that the brief did not supply — shipped without
 a flag — reads as generated the moment anyone checks. `craft/content.md`.
