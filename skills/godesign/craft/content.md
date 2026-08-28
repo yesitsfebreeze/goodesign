@@ -43,7 +43,7 @@ A landing page with no spec invents prices, hosting locations, integrations,
 customer names and quotes. **Never fabricate a testimonial.** Every invented
 product fact goes into **one list under gate line 18**, as
 `assumed: 12 €/seat, Frankfurt hosting, DATEV export, …` — so the client can
-strike each one, and two agents produce the same shape. Real copy at real length does
+strike each one, and two reviewers produce the same shape. Real copy at real length does
 not mean real-sounding claims.
 
 ## The deletion test

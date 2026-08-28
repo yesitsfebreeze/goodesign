@@ -26,8 +26,8 @@ marker, a rule, a hairline, a numbering system, a single oversized element.
 **Density is a position.** Airy is not automatically better. A dense, well-set
 table is a stronger statement than the same data in cards.
 
-**Where structure carries meaning, draw structure.** An inline SVG diagram beats
-a stock illustration; the second is always decoration.
+**Where structure carries meaning, draw structure.** A drawn diagram beats a
+stock illustration; the second is always decoration.
 
 ## The one constraint on being distinctive
 

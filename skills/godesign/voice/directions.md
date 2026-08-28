@@ -59,7 +59,7 @@ Display / hero   Satoshi · General Sans · Instrument Serif · Fraunces
                  Clash Grotesk · Cabinet Grotesk
 Body             Instrument Sans · DM Sans · Source Sans 3 · Geist
                  Plus Jakarta Sans · Outfit
-Data / tables    Geist · DM Sans (both with tabular-nums)
+Data / tables    Geist · DM Sans (both with tabular figures)
                  JetBrains Mono · IBM Plex Mono
 Code             JetBrains Mono · Fira Code · Berkeley Mono · Geist Mono
 ```
@@ -71,5 +71,5 @@ Trajan, Raleway, Clash Display, Courier New (for body).
 **Overused — never as the primary face unless the user asks by name:** Inter,
 Roboto, Arial, Helvetica, Open Sans, Lato, Montserrat, Poppins.
 
-A default font stack is a decision nobody made. **Two typefaces maximum, three
+A default face is a decision nobody made. **Two typefaces maximum, three
 absolute ceiling.**

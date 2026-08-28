@@ -12,16 +12,14 @@ Space is the primary material. Everything else follows from it.
   Try deleting the border and doubling the gap; it is usually better.
 - **One scale, and every gap sits on it.**
   `4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128 · 160` is enough for a whole
-  product. One 26px among 24s and 32s reads as sloppy long before anyone can
-  name why.
+  product. One 26 among 24s and 32s reads as sloppy long before anyone can name why.
 - **The gap above a heading belongs to the section it opens** — roughly **2:1**
   against the gap below it. A heading floating equidistant between the block
   above and its own text turns the page into a list of fragments.
 - **Vertical rhythm is a ratio, not a constant.** Section, block, line: three
   distinct magnitudes, each clearly larger than the next. The reader feels the
   structure without reading it.
-- **Padding scales with the container.** A card's inner padding at 320px is not
-  its padding at 1200px. Panels and bands need more inside them than buttons do.
+- **Padding scales with the container.** A card's inner padding on a phone is not its padding on a desk. Panels and bands need more inside them than buttons do.
 - **Page margins scale with the viewport; the measure does not.** As the window
   grows, the text column stops and the margins take the growth.
 - **Optical beats mathematical.** A cap-height block centred by maths sits high;
@@ -31,7 +29,7 @@ Space is the primary material. Everything else follows from it.
   and write the correction down. Where an icon is off, fix the drawing, not
   the margin around it.
 - **Rules between list items are the same admission as rules between
-  blocks.** Try 24px of gap first; keep the rule only where rows are rows — a
+  blocks.** Try a full step of gap first; keep the rule only where rows are rows — a
   table, a ledger — and the eye must track across.
 - **Everything aligns to something.** An element aligned to nothing is a bug,
   not a style.

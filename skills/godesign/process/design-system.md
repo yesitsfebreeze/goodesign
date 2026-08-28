@@ -1,8 +1,7 @@
 # A design language from nothing
 
 **Read when:** a product has no design language, no named values, and no
-precedent. The
-output is a written source of truth, not a mood board.
+precedent. The output is a written language, not a mood board.
 
 Start from `kit/defaults.md` and replace every value with a reason.
 
@@ -23,10 +22,10 @@ Start from `kit/defaults.md` and replace every value with a reason.
    never a block.
 8. **Write it down.**
 
-## DESIGN.md
+## The written language
 
 ```markdown
-# Design system — <project>
+# Design language — <product>
 
 ## Product context
 Who it is for · the job · the competitive frame · the first-five-seconds feeling
@@ -60,7 +59,7 @@ Radius language · nesting rule · elevation levels (max 2)
 One line per decision: what was chosen, what it beat, and why
 ```
 
-**The decisions log is the part that survives.** A system without it gets
+**The decisions log is the part that survives.** A language without it gets
 re-litigated every quarter by people who cannot see what was already rejected.
 
 ## Previewing

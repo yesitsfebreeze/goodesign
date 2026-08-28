@@ -40,25 +40,24 @@ does not read. Decided second, after space, before everything else.
 ## Floors
 
 ```
-Font families in use   ≤ 3 (2 is usually right)
-Heading levels         no skipped levels — never h1 → h3
-Body size              ≥ 16px
-Caption / label        ≥ 12px
+Families in use   ≤ 3 — two is usually right
+Heading levels    none skipped — never a first-level heading followed by a third
+Body size         never below the size the medium reads comfortably by default
+Captions, labels  never below three quarters of body
 ```
 
 ## Punctuation
 
 Curly quotes, not straight. `…` not `...`. "Saving…" not "Saving...".
 
-## When there are no web fonts
+## When your face cannot be used
 
 A surface where no face of your choosing can load — an email, a locked
-environment: the named face is a
-wish and **the fallback stack is the type decision.** Choose it as such —
-`Iowan Old Style, Charter, Georgia` is a decision; `serif` is not — write the
-stack you expect to render into the brief's `Type:` line, and check the page
-in what actually renders, not in what you named.
-
+environment: the named face is a wish and **the faces that will actually show
+are the type decision.** Choose them as such — a named serif with two named
+fallbacks is a decision; "a serif" is not — write what you expect to show into
+the brief's `Type:` line, and judge the page in what actually shows, not in
+what you named.
 
 Two families, one of them possibly mono. If the same stack would serve a
 techno label and a tax adviser, it was not chosen for this brief.

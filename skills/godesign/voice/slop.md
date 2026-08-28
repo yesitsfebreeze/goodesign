@@ -1,6 +1,7 @@
 # The tells — what unconsidered output looks like
 
-**Read when:** before shipping any visual surface, and as pass 4 of any review.
+**Read when:** before any visual surface is called done, and as pass 4 of any
+review.
 Highest-leverage single file in this skill.
 
 Everything in `craft/` makes an interface **correct**. Correct is the floor, not
@@ -27,7 +28,7 @@ kept; the list must describe what is generated now, not what was.
    look).
 4. **Centred everything** — every heading, description and card centred.
 5. **Uniform bubbly border-radius** — the same large radius on every element.
-6. **Decorative blobs, floating circles, wavy SVG dividers.** If a section feels
+6. **Decorative blobs, floating circles, wavy section dividers.** If a section feels
    empty it needs better content, not decoration.
 7. **Emoji as design elements** — rockets in headings, emoji as bullets.
 8. **A coloured stripe down the left edge of cards.**
@@ -42,7 +43,7 @@ Machine output that has learned to avoid the list above now clusters around
 three looks. **They are legitimate for some briefs and appear regardless of
 brief**, which is what makes them defaults rather than choices:
 
-1. **Warm cream ground** (near `#F4F1EA`), a high-contrast **serif display
+1. **Warm cream ground** (near paper), a high-contrast **serif display
    face**, one **terracotta / muted green / rust accent**, hairline rules,
    "editorial" as a reflex.
 2. **Near-black ground** with a single **acid-green or vermilion** accent.
@@ -72,10 +73,10 @@ Any of these appearing **without an argument** is a fail:
 - a dark ground chosen by reflex
 - glassmorphic frosted cards floating over pastel blobs
 - glowing borders
-- three identical feature cards with three lucide icons
+- three identical feature cards with three identical line icons
 - a hero centred because nothing decided otherwise
 - 3D abstract figures holding orbs
-- Inter at 16/1.5 with no measure set
+- the default sans at the default size with no measure set
 - a "Get started · Learn more" button pair
 - drop shadows on everything at equal depth
 - gradient buttons as the primary CTA pattern

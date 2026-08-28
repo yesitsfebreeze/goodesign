@@ -1,10 +1,12 @@
 # Reviewing a plan, before anything is made
 
-**Read when:** reviewing a plan, a spec, or a PRD that contains UI — *not* a
-live site. Use `process/audit.md` for an existing page.
+**Read when:** reviewing a plan, a spec, or a brief that describes an
+interface — *not* an existing product. Use `process/review.md` or
+`process/audit.md` for one that exists.
 
-**The output is a better plan, not a document about the plan.** Find the missing
-design decisions and add them to the plan. Do not start implementing.
+**The output is a better plan, not a document about the plan.** Find the
+missing design decisions and add them to the plan. Do not start designing the
+screens.
 
 Posture: opinionated but collaborative. Find every gap, explain why it matters,
 fix the obvious ones, and ask about the genuine choices.
@@ -40,7 +42,7 @@ highest-leverage dimensions.
 ## The seven passes
 
 **1 · Information architecture.** Does the plan define what the user sees first,
-second, third? *Fix to 10:* add the hierarchy, with an ASCII diagram of screen
+second, third? *Fix to 10:* add the hierarchy, with a diagram of screen
 structure and navigation flow. Apply constraint worship — if you can only show
 three things, which three?
 
@@ -54,12 +56,12 @@ First 5 seconds, first 5 minutes, five-year relationship.
 
 **4 · Slop risk.** Does the plan describe specific, intentional UI, or generic
 patterns? *Fix to 10:* rewrite every vague description with a specific
-alternative. Run `voice/slop.md` and `surface/landing-vs-app.md`.
+alternative. Apply `voice/slop.md` and `surface/landing-vs-app.md`.
 
 **5 · Design system alignment.** Does the plan align with the house law? If a
 design system or set of named values exists, annotate the plan with the
-specific values and parts. If none exists, flag the gap. Any new component: does it fit the
-existing vocabulary, or invent a second way to say the same thing?
+specific values and parts. If none exists, flag the gap. Any new component: does it fit the existing
+vocabulary, or invent a second way to say the same thing?
 
 **6 · Responsive and accessibility.** Keyboard nav, screen readers, contrast,
 touch targets — **specify them in the plan or they will not exist.** Each

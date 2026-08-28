@@ -30,8 +30,8 @@ refraction and real-time specular response, adapting between light and dark
 environments.
 
 **Do not import it by default.** It is one platform's answer to that platform's
-problem: a moving, layered, dark-and-light OS shell rendered by that platform's
-compositor. A white page on the web is a different problem.
+problem: a moving, layered, dark-and-light operating-system shell drawn by
+that platform's own rendering. A white page is a different problem.
 
 **Carry the reasoning — hierarchy through depth and space, not decoration —
 and leave the material.** Importing the glass is cargo, not craft.
@@ -56,7 +56,7 @@ rhythm descends from there, not from any operating system.
 
 | Apple says | Do this |
 |---|---|
-| Clarity | body type set first, measure 60–75ch, ornament removed — `craft/type.md` |
+| Clarity | body type set first, measure 60–75 characters, ornament removed — `craft/type.md` |
 | Deference | one accent used rarely, neutral passive surfaces — `craft/colour.md` |
 | Depth | two elevation levels maximum, hierarchy by space — `craft/shape-and-depth.md` |
 | Consistency | the product's existing pattern beats a novel one — `core/house-law.md` |
@@ -64,4 +64,4 @@ rhythm descends from there, not from any operating system.
 ## What "make it look Apple" usually means
 
 Nine times out of ten the request is **"make it look like someone decided"** —
-which is `voice/commitment.md`, not a translucency shader.
+which is `voice/commitment.md`, not a translucency effect.

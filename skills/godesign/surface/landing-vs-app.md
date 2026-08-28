@@ -1,6 +1,6 @@
 # Landing page or app UI — classify first
 
-**Read when:** starting or reviewing any web surface. The two have different
+**Read when:** starting or reviewing any page. The two have different
 rules and applying the wrong set is a common, expensive mistake.
 
 ## The classifier
@@ -22,7 +22,7 @@ HYBRID                a marketing shell with app-like sections
   not a document.
 - **Brand-first hierarchy:** brand > headline > body > CTA. The brand is the
   loudest text on the screen.
-- **Typography is expressive and purposeful.** No default stacks — see
+- **Typography is expressive and purposeful.** No default faces — see
   `voice/directions.md`.
 - **The ground is a decision.** A flat single colour is allowed when the type
   carries the hero — then it is the modernist move, and `voice/commitment.md`
@@ -61,7 +61,7 @@ HYBRID                a marketing shell with app-like sections
 ## Universal rules
 
 - Colour is defined by role, once, and referenced everywhere.
-- No default font stacks — Inter, Roboto, Arial, system.
+- No default faces — Inter, Roboto, Arial, whatever the system supplies.
 - One job per section.
 - **If deleting 30% of the copy improves it, keep deleting.**
 - **Cards earn their existence.** No decorative card grids.

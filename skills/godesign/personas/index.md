@@ -41,7 +41,7 @@ anything that lives in a terminal                                        → tui
 undo toast should slide, not pop" is `motion`. One artefact often needs them in
 that order — `process/workflows.md`.
 
-Where two apply, run `ux` first and `lead` second — that is the order of
+Where two apply, wear `ux` first and `lead` second — that is the order of
 `core/contract.md`, and it is not negotiable.
 
 ## Consulting without switching
@@ -53,7 +53,7 @@ session's default.
 
 ## Provenance
 
-All three carry a **Built from** list — the researched practitioners behind
+All four carry a **Built from** list — the researched practitioners behind
 them, one named trait each, with sources. Wren takes from Rams, Vignelli,
 Bierut, Ive, Reichenstein and Hara; Ines from Zhuo, Nielsen, Norman, Saarinen
 and Eames; Ash from Kare, Moolenaar and Rocha; Rio from Kowalski, Freiberg,

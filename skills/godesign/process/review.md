@@ -2,12 +2,13 @@
 
 **Read when:** asked to review, critique, or audit an existing design.
 
-Run in this order — the order a person actually meets the product in. **Stop
-*designing* at the first level that fails.** A typographic fix on a screen
-whose flow is wrong is wasted work, and so is a flow fix on a screen answering
-the wrong job. **But levels 5–8 are still walked** — because a HIGH at level 5 or 6 (a focus ring removed, a layout that ratchets
-on resize) blocks the ship regardless of where the design fails, and a report
-that stopped at a LOW on level 1 would never have found it.
+Walk it in this order — the order a person actually meets the product in.
+**Stop *designing* at the first level that fails.** A typographic fix on a
+screen whose flow is wrong is wasted work, and so is a flow fix on a screen
+answering the wrong job. **But levels 5–8 are still walked**, because a HIGH
+there — a focus ring removed, a layout that breaks when the window changes —
+blocks release regardless of where the design fails, and a report that stopped
+at a LOW on level 1 would never have found it.
 
 ```
 0  Job and flow    whose job is this, does the sequence get them there in the
@@ -56,9 +57,8 @@ taste — and it is labelled as taste.**
   cramped" is not a finding. "The section padding on the pricing screen is 24
   against a 64 rhythm everywhere else" is.
 - **Say what the fix costs.**
-- Where two directions are genuinely open, **make both and look at them** —
-  do not describe ten. Where you may only advise, name both in one row and say
-  which you would make first.
+- Where two directions are genuinely open, **sketch both and look at them** —
+  do not describe ten. Name both in one row and say which you would make first.
 - Never review with placeholder copy. Real content at real length, or it is not
   a review.
 
@@ -70,7 +70,8 @@ a description is *judged*; both are honest, and the report says which.
 
 ## For a whole site, page by page
 
-`process/audit.md` is the ~80-item instrument for sweeping many pages. A single page or component uses this file. Same severities, same report.
+`process/audit.md` is the ~70-item instrument for sweeping many pages. A
+single page or component uses this file. Same severities, same report.
 
 ## For a plan, before anything is made
 
@@ -78,7 +79,7 @@ Use `process/plan-review.md` — the 0–10 rating method and seven passes.
 
 ## The report
 
-**Scope first.** State the mode, the exact scope, the framework and styling
+**Scope first.** State the mode, the exact scope, the medium and the house's
 conventions, and any boundary. Then show what was actually looked at:
 
 | Category | What was looked at | Result |
@@ -87,12 +88,12 @@ conventions, and any boundary. Then show what was actually looked at:
 
 **Never imply a surface you did not look at was reviewed.**
 
-**Findings** — one table per principle, every change made or proposed, one row
-per diff. A repeated systemic issue is one row listing every location.
+**Findings** — one table per principle, every change proposed, one row per
+change. A repeated systemic issue is one row listing every location.
 
 | Severity | Location | Before | After | Why |
 |---|---|---|---|---|
-| MEDIUM | the counter, line 17 | proportional figures | tabular figures | proportional digits shift as the value changes |
+| MEDIUM | the live counter on the dashboard | proportional figures | tabular figures | proportional digits shift as the value changes |
 
 ```
 HIGH     makes an interaction inaccessible, misleading, unreadable, or
@@ -101,15 +102,16 @@ MEDIUM   a noticeable usability or consistency problem
 LOW      isolated polish — reported only in a full review
 ```
 
-Location is the screen and the element. *Why* names the principle and the user impact. Omit a principle's
-table if nothing was found. Never pad to a count.
+Location is the screen and the element. *Why* names the principle and the
+user impact. Omit a principle's table if nothing was found. Never pad to a
+count.
 
 **Considered but rejected** — one to five real candidates and why they did not
 make the list. Do not invent filler; if there are fewer, say so.
 
 | Location | Candidate | Rejected because |
 |---|---|---|
-| the card, line 28 | increase the shadow | depth already matches the shared surface role; changing one card reduces consistency |
+| the member card in the team list | increase the shadow | depth already matches the shared surface role; changing one card reduces consistency |
 
 **The gate** — the table from `process/gate.md`, one row per line,
 each labelled *seen* · *judged* · *fail* · *not seen* · *not applicable* ·

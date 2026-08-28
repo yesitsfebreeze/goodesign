@@ -1,6 +1,6 @@
 # Time
 
-**Read when:** anything waits — a fetch, a save, a navigation, an upload.
+**Read when:** anything waits — a load, a save, a navigation, an upload.
 
 - **Show system status inside 100ms of every input.** Silence reads as broken.
 - **Under ~400ms an operation reads as instant** — the Doherty threshold. Ask for that speed before designing a nicer spinner.
