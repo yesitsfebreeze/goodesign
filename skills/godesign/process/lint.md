@@ -80,11 +80,18 @@ number columns without tabular-nums
 
 ## Spacing
 
+Read the house's `--space-*` tokens first and substitute their values. Then,
+gaps only, comments stripped, token definitions excluded:
+
 ```
-px values not on the scale     grep -rnoE '\b[0-9]+px' | grep -vE '\b(4|8|12|16|24|32|48|64|96|128|160)px'
+perl -0777 -pe 's{/\*.*?\*/}{}gs' <style files> \
+  | grep -nE '(margin|padding|gap|inset|top|right|bottom|left)[^;{]*\b[0-9]+px' \
+  | grep -vE '^\s*--' \
+  | grep -vE '\b(4|8|12|16|24|32|48|64|96|128|160)px'
 ```
 
-The house scale wins over this list — substitute it.
+A bare `[0-9]+px` grep returns every font size, breakpoint, hairline and
+comment and means nothing.
 
 ## Motion
 
@@ -122,5 +129,6 @@ src/Nav.tsx:41     <div onClick>                    → <button>
 src/Hero.tsx:12    <img> without dimensions         → width={1200} height={630}
 ```
 
-One line each, sorted by file. Then the gate line it satisfies, marked
-**verified**.
+One line each, sorted by file. Then append each result to the gate table
+(`process/gate.md`) in its row — 2 scale, 8 states, 11 motion, 12 reduced —
+marked **verified**, with the command. One table, one vocabulary.

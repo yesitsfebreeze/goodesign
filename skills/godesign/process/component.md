@@ -1,8 +1,9 @@
 # "Create a button" — the component method
 
 **Read when:** asked for any single component — a button, an input, a card, a
-menu, a toast. This is the method a designer who knows the system runs
-without being told to.
+menu, a toast — **inside an existing codebase.** Greenfield with no tree: skip
+this file; `core/house-law.md` says what to do when there is no law. This is
+the method a designer who knows the system runs without being told to.
 
 The failure this prevents: being told "create a button" and producing *a*
 button — traced from memory of some other product, styled from scratch,
@@ -14,7 +15,20 @@ never trace one.**
 Told "create a button", you do these eight things, in order, and most of them
 take a minute.
 
+**What to read.** Mandatory: `core/house-law.md`, `craft/states.md`,
+`process/gate.md`. On demand: `surface/shadcn.md` (only with a
+`components.json`), `polish/icons.md` (only with an icon), `polish/hit-areas.md`
+(only if a target is under 40px), `polish/animation-mechanics.md` (only if you
+are adding motion). Nothing else.
+
 ---
+
+## 0 · Does the surface exist?
+
+Find the screen the component attaches to. **If it does not exist in the
+tree** — no route, no view, no entity — stop here. Report it as a HIGH finding,
+offer the drop-in labelled *not verified*, and ask. Steps 5–8 assume a host;
+building the component anyway is designing the pixel above a missing flow.
 
 ## 1 · Read the house law
 
@@ -31,10 +45,15 @@ decision; do not invent it.
 Before imagining anything, find every relative of the thing you were asked for:
 
 ```
-components/ui/button*          the primitive, if there is one
-grep -rn "cva("                every variant-bearing component
-grep -rn "<Button"             every usage — this is the real spec
-grep -rn "variant=\|size="     which variants and sizes are actually used
+# React / shadcn
+components/ui/button*                    the primitive, if there is one
+grep -rn "cva("                          every variant-bearing component
+grep -rn "<Button"                       every usage — this is the real spec
+grep -rn "variant=\|size="               which variants and sizes are actually used
+
+# Vue / Svelte / plain CSS / anything else
+grep -rhoE '<button[^>]*class="[^"]*"' src | grep -oE 'class="[^" ]*' | sort | uniq -c | sort -rn
+grep -rnE '^\s*\.[a-z-]*(btn|button)\b[^{]*\{' src     where each class is defined, and how often
 ```
 
 Count them. **The most-used variant is the house voice.** A repo with forty
@@ -46,7 +65,14 @@ If the primitive exists, the task is almost never "create". It is **extend,
 compose, or use as-is** — and "use as-is" is the right answer more often than
 anyone wants.
 
-## 3 · Search the system for what it ships
+Two traps the count exposes. **A primitive with zero usages is dead** — a
+`.btn` nobody calls, overridden with `!important` elsewhere, is not the house
+voice however canonical it looks. And **a class defined in scoped or
+component CSS more than once is a copy, not a primitive** — the house has
+been pasting it. Do not paste it a third time; the finding is that it should
+be lifted to one place, and that is a decision for the report, not a silent fix.
+
+## 3 · Search the system for what it ships — *shadcn or a registry only; otherwise skip*
 
 If the system has a registry, search it before writing anything:
 
@@ -60,7 +86,7 @@ Short concrete nouns, 1–3 words. Surface two or three candidates, not ten.
 — the built thing will lack the states, the accessibility and the variants the
 registry one has, and someone will find out.
 
-## 4 · Understand the grammar
+## 4 · Understand the grammar — *the questions apply everywhere; the answers below are shadcn's*
 
 You cannot compose in a system you have not read. For shadcn that means:
 tokens as `name` / `name-foreground` pairs, `cva()` variant axes, `cn()` for
@@ -73,7 +99,8 @@ states exposed to CSS, how is radius derived.
 
 ## 5 · Decide what this one is
 
-Now, and only now, `core/contract.md` move 0 — in miniature:
+Now, and only now, the component's own five lines. **This replaces
+`core/contract.md` move 0 for a single component**; do not fill both.
 
 ```
 Job:        what does pressing it do, in the user's words
@@ -126,11 +153,20 @@ target          44px touch · 40 dense desktop — polish/hit-areas.md
 ## 8 · Verify and report
 
 Run the component subset of `process/gate.md`: targets, contrast, focus,
-keyboard, reduced motion, longest string. Label each *verified*, *inspected* or
-*not verified*.
+keyboard, reduced motion, longest string. Label each *verified*, *inspected*,
+*not verified* — or *house-law (file:line)* where the house has decided
+otherwise.
 
-Report as `process/review.md` prescribes — Before / After / Why, and a
-one-line **Considered but rejected**: the variant you did not add, and why.
+Report in six lines. `process/review.md` is for reviews; it is not needed here.
+
+```
+Decision     use as-is · extend (which axis) · compose (from what) · new (why)
+Usage        the markup, in the house's own system
+Findings     ≤ 3, each file:line, each with what the fix costs
+Rejected     the one variant or direction you did not take, and why
+Gate         the subset, each line labelled
+Verdict      Approve · Needs changes · Block — and what is unverified
+```
 
 ---
 
@@ -140,6 +176,15 @@ Replace "button" with input, card, dialog, menu, toast, table row. The eight
 steps do not change. The proportion does: for a dialog, step 2 finds `Dialog`
 and step 6 is almost entirely composition (`DialogTitle` is mandatory; overlays
 manage their own `z-index`; focus is trapped and restored by the primitive).
+
+## Where house law and this file disagree
+
+They will. The house says `cursor: default` on disabled; `craft/states.md` says
+`not-allowed`. The house is desktop-only by written decision and has no
+`hover: hover` guard. Every house button is 32px tall. **The house wins, per
+line** — label the gate line *house-law (file:line)*, cite the decision, and do
+not fix one component against the rest of the tree. If the house decision is
+wrong, that is a written record in the repo's format, not a lone button.
 
 ## What this method refuses
 

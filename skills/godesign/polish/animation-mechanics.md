@@ -109,7 +109,7 @@ The non-absolute icon defines the layout size.
 
 ## Scale on press
 
-**Always `scale(0.96)`. Never below `0.95`** — anything lower reads as
+**`scale(0.96)` or `0.97`. Never below `0.95`** — anything lower reads as
 exaggerated. Use a transition, not a keyframe, so releasing mid-press returns
 smoothly.
 

@@ -28,6 +28,23 @@ built it.
 | "Your all-in-one solution for X" | the one job it does best |
 | "Clean, modern UI" | not copy at all — delete |
 
+## German, and other languages with a register
+
+Decide **du or Sie** in the brief and never mix them. B2B and anything touching
+money, law or health defaults to Sie. Check every heading and button at German
+length — ~35% longer than English.
+
+A German-facing page carries an **Impressum** and a **Datenschutz** link in the
+footer; a page without them is not shippable, whatever it looks like.
+
+## Facts you do not have
+
+A landing page with no spec invents prices, hosting locations, integrations,
+customer names and quotes. **Never fabricate a testimonial.** Every invented
+product fact is flagged in the report as *assumed — confirm before shipping*,
+in one list, so the client can strike each one. Real copy at real length does
+not mean real-sounding claims.
+
 ## The deletion test
 
 **If deleting 30% of the copy improves it, keep deleting.**

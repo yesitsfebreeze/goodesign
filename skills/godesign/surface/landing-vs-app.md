@@ -24,8 +24,11 @@ HYBRID                a marketing shell with app-like sections
   loudest text on the screen.
 - **Typography is expressive and purposeful.** No default stacks — see
   `voice/directions.md`.
-- **No flat single-colour backgrounds.** A gradient, an image, a subtle pattern
-  or a real texture. (This is the one place a gradient earns its keep.)
+- **The ground is a decision.** A flat single colour is allowed when the type
+  carries the hero — then it is the modernist move, and `voice/commitment.md`
+  applies. A gradient, image, pattern or texture is allowed when it *is* the
+  composition. What is not allowed is a flat ground *and* weak type, or a
+  wash added to satisfy a rule that does nothing for the page.
 - **Hero is full-bleed, edge-to-edge.** No inset, tiled, or rounded variants.
 - **Hero budget:** brand, one headline, one supporting sentence, one CTA group,
   one image. That is all of it.

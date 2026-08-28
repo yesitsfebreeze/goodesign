@@ -10,6 +10,10 @@ why it is recognisable on sight.
 
 **The test:** would a human designer at a respected studio ever ship this?
 
+*Last verified against current machine output: August 2026.* This is the file
+most likely to age. A tell that has stopped being common is **removed**, not
+kept; the list must describe what is generated now, not what was.
+
 ---
 
 ## The blacklist — ten patterns that read as generated
@@ -32,6 +36,29 @@ why it is recognisable on sight.
    all-in-one solution for…".
 10. **Cookie-cutter section rhythm** — hero → 3 features → testimonials →
     pricing → CTA, every section the same height.
+
+## The 2026 tells — the anti-slop that became the slop
+
+Machine output that has learned to avoid the list above now clusters around
+three looks. **They are legitimate for some briefs and appear regardless of
+brief**, which is what makes them defaults rather than choices:
+
+1. **Warm cream ground** (near `#F4F1EA`), a high-contrast **serif display
+   face**, one **terracotta / muted green / rust accent**, hairline rules,
+   "editorial" as a reflex.
+2. **Near-black ground** with a single **acid-green or vermilion** accent.
+3. **Broadsheet** — hairline rules, zero radius, dense newspaper columns.
+
+Where the brief pins one of these down, follow it. Where an axis is free, **do
+not spend that freedom on one of these three.** Work through what you would
+produce for a *different* brief; if you arrive at the same look, it was not a
+decision. A page in look 1 with an argument is fine; a page in look 1 because
+that is what a tasteful page looks like this year is the same failure as the
+purple gradient, one generation later.
+
+**Invented facts are a tell too.** A price, a hosting location, an
+integration, a customer quote that the brief did not supply — shipped without
+a flag — reads as generated the moment anyone checks. `craft/content.md`.
 
 ## The wider tell list
 

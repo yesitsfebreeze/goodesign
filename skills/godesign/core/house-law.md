@@ -13,7 +13,14 @@ everything in this skill.** You did not write it.
 - If the law is wrong, the move is a **written decision record** in the repo's
   own format, landing in the same commit as the change. Never a quiet exception.
 - The repo's own gate — `just check`, `npm run lint`, whatever it is — runs.
-  `process/gate.md` does not replace it.
+  `process/gate.md` does not replace it. If it has a step that writes into the
+  tree and you are read-only, run every other step, name the one skipped, and
+  report it as *partial*.
+- **If the repo carries its own copy of a design persona or review order** —
+  an older fork of this skill, a `designer/` directory — the repo's copy governs
+  the *rules* (colour, tokens, copy, memo path) and this skill's *order* (the
+  job and the flow before the screen) still governs the pass. Say which you
+  used for what.
 
 ## Finding the law
 
@@ -26,6 +33,10 @@ tokens/ · *.css custom props   — the real values, and what is actually allowe
 tailwind.config · theme files  — the scale in force
 an existing component of the same kind — the strongest precedent there is
 ```
+
+**Greenfield — no tree, no law.** Say so in one line and move on to
+`kit/defaults.md`; do not go looking for a component method to apply to
+nothing.
 
 **Consistency is a feature.** Before inventing anything, check whether the tree
 already says it another way. Two ways to do one thing is a bug, and one that

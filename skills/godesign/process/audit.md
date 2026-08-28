@@ -4,8 +4,8 @@
 `process/review.md` for the order and the reporting rules; this is the
 instrument.
 
-Apply at each page. Each finding gets an impact rating: **high / medium /
-polish**, and a category.
+Apply at each page. Each finding gets a severity — **HIGH / MEDIUM / LOW**, as
+`process/review.md` defines them — and a category. Same report, same verdict.
 
 ---
 
@@ -24,8 +24,8 @@ polish**, and a category.
 
 - Font families ≤ 3
 - Scale follows a ratio (1.25 major third, 1.333 perfect fourth)
-- Line-height 1.5 body, 1.15–1.25 headings
-- Measure 45–75 characters (66 ideal)
+- Line-height 1.5 body, 1.05–1.25 headings
+- Measure 60–75 characters (66 ideal)
 - No skipped heading levels (h1 → h3 without h2)
 - ≥ 2 weights doing hierarchy work
 - No blacklisted faces (Papyrus, Comic Sans, Lobster, Impact, Jokerman)
@@ -75,7 +75,7 @@ polish**, and a category.
 - Empty: warm message + primary action + visual — not "No items."
 - Errors specific, with a fix or next step
 - Success: confirmation animation or colour, auto-dismiss
-- Touch targets ≥ 44px
+- Targets 44px touch, 40px dense desktop — `polish/hit-areas.md`
 - `cursor: pointer` on everything clickable
 
 ## 6 · Responsive
@@ -91,8 +91,10 @@ polish**, and a category.
 
 ## 7 · Motion
 
-- Easing: ease-out entering, ease-in exiting, ease-in-out moving
-- Duration 50–700ms; nothing slower unless it is a page transition
+- Easing: ease-out entering and exiting (exit shorter), ease-in-out for
+  on-screen movement, linear only for constant motion
+- Duration under 300ms on a product surface; 300–600ms only for page
+  transitions and marketing
 - Every animation communicates something
 - `prefers-reduced-motion` respected
 - No `transition: all` — properties listed explicitly
