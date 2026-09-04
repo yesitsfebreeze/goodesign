@@ -1,6 +1,6 @@
 ---
 name: hygiene
-description: Rates and reviews every skill in this repository and keeps LEDGER.md — a ranked table of which skills perform best, which duplicate each other, which depend on another skill, and why each one exists. Opens one GitHub issue per finding and closes it when the finding is gone. Use for "/hygiene", "skill ledger", "rate the skills", "which skills are duplicates", "which skills have dependencies", "review the skills", "clean up the skills", "skill hygiene". Do NOT use for writing a new skill or for reviewing application code.
+description: Rates and reviews every skill under a repository's skills/ folder (the current one, or a path you give) and keeps its LEDGER.md — a ranked table of which skills perform best, which duplicate each other, which depend on another skill, and why each one exists. Opens one GitHub issue per finding and closes it when the finding is gone. Use for "/hygiene", "skill ledger", "rate the skills", "which skills are duplicates", "which skills have dependencies", "review the skills", "clean up the skills", "skill hygiene". Do NOT use for writing a new skill or for reviewing application code.
 allowed-tools: Read, Glob, Grep, Bash(python3 *), Bash(gh *)
 ---
 
@@ -16,10 +16,14 @@ script points, it does not decide.
 ## 1. Measure
 
 ```bash
-python3 skills/hygiene/hygiene.py            # writes LEDGER.md at the repo root
-python3 skills/hygiene/hygiene.py --issues   # also syncs GitHub issues (needs gh auth)
-python3 skills/hygiene/hygiene.py --selftest # the script's own check
+python3 ${CLAUDE_SKILL_DIR}/hygiene.py [repo]           # writes <repo>/LEDGER.md
+python3 ${CLAUDE_SKILL_DIR}/hygiene.py [repo] --issues  # also syncs that repo's GitHub issues (needs gh auth)
+python3 ${CLAUDE_SKILL_DIR}/hygiene.py --selftest       # the script's own check
 ```
+
+`repo` is the folder that holds `skills/`. It defaults to the current
+directory when that has a `skills/` folder, else to the repo this skill lives
+in. Run it from inside the repo to review, and the default is right.
 
 `LEDGER.md` has four tables:
 
@@ -87,11 +91,15 @@ Low findings live in the ledger only.
 
 ## On CI
 
-`.github/workflows/hygiene.yml` runs on every push to `main`, weekly, and on
-demand: selftest, then the script with `--issues`, then commits `LEDGER.md`
-if it changed. Pull requests get the selftest and a fresh ledger in the job
-log, no issues and no commit. The judged half is not on CI — run `/hygiene`
-locally after a red run, or when the ledger says a skill dropped.
+`hygiene.yml` next to this file is the workflow. Copy it to
+`.github/workflows/hygiene.yml` in the repo to review; it checks out this
+skill's repo beside the target and runs the script against `.`. On every push
+to `main`, weekly, and on demand it runs the selftest, then the script with
+`--issues`, then commits `LEDGER.md` if it changed. Pull requests get the
+selftest and a fresh ledger in the job log, no issues and no commit. If the
+repo runs Prettier over markdown, add `LEDGER.md` to its `.prettierignore` —
+the ledger is generated, not formatted. The judged half is not on CI — run
+`/hygiene` locally after a red run, or when the ledger says a skill dropped.
 
 ## Done means
 

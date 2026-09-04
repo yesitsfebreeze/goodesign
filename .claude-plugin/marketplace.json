@@ -7,14 +7,14 @@
   },
   "metadata": {
     "description": "goodesign — the design authority and the corporate-identity layer on top of it, as Claude Code skills",
-    "version": "1.1.0"
+    "version": "1.1.1"
   },
   "plugins": [
     {
       "name": "goodesign",
       "source": "./",
       "description": "Three skills. goodesign: one design skill with an index built for agents — atomic files per topic, read on demand; flow, space, type, colour, states, motion, forms, copy; terminal UI; the Apple lineage; the AI-slop blacklist; review passes, a ship gate and a page audit; four wearable personas. diw-use-customer-identity: how a brand's own law rides on goodesign — precedence, the shape of a brand instance, a brand gate stacked on goodesign's, authoring an instance from a token home. diw-ci-manola: the Manola brand as that instance.",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "author": { "name": "yesitsfebreeze" },
       "category": "development",
       "keywords": [

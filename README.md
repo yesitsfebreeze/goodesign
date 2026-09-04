@@ -10,7 +10,7 @@ A designer, as a skill — and the corporate identity that rides on top of it.
 ```
 goodesign                   what an interface must be, and why       — the craft
   diw-use-customer-identity how a brand's law rides on top            — the protocol
-    diw-ci-manola             the Manola brand, as that law             — an instance
+    diw-ci-manola           the Manola brand, as that law             — an instance
 ```
 
 ## goodesign

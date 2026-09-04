@@ -21,7 +21,7 @@ needs. Every file opens with a **Read when** line.
 ```
 goodesign                    what an interface must be, and why   — the craft
   diw-use-customer-identity  how a brand's law rides on top        — this skill
-    diw-ci-<brand>             one brand's actual law                — the instance
+    diw-ci-<brand>           one brand's actual law                — the instance
 ```
 
 Three layers, one direction. The instance names values and meanings. This
