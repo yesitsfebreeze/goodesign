@@ -1,24 +1,17 @@
 {
-  "name": "godesign",
-  "version": "1.0.0",
-  "description": "The design authority as one skill — atomic wisdom per topic, indexed for agents and read on demand. Covers the work before the screen, the craft on it, the implementation underneath, terminal surfaces, the difference between correct and memorable, and how the work is judged.",
+  "name": "goodesign",
+  "version": "1.1.0",
+  "description": "The design authority as one skill plus the corporate-identity layer on top of it — goodesign (what an interface must be and why), diw-use-customer-identity (how a brand's law rides on goodesign), manola-ci (the Manola brand as that law).",
   "author": {
     "name": "yesitsfebreeze",
     "url": "https://github.com/yesitsfebreeze"
   },
-  "homepage": "https://github.com/yesitsfebreeze/godesign",
-  "repository": "https://github.com/yesitsfebreeze/godesign",
+  "homepage": "https://github.com/yesitsfebreeze/goodesign",
+  "repository": "https://github.com/yesitsfebreeze/goodesign",
   "license": "MIT",
   "keywords": [
-    "design",
-    "ux",
-    "ui",
-    "tui",
-    "design-review",
-    "typography",
-    "accessibility",
-    "design-system",
-    "personas"
+    "design", "ux", "ui", "tui", "design-review", "typography", "accessibility",
+    "design-system", "personas", "brand", "corporate-identity", "tokens"
   ],
   "skills": "./skills/"
 }

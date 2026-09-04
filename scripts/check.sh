@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# godesign self-check: every cross-reference resolves, every atomic file opens
+# goodesign self-check: every cross-reference resolves, every atomic file opens
 # with a "Read when" line, every persona has the four frontmatter keys.
 set -u
-cd "$(dirname "$0")/../skills/godesign" || exit 1
+cd "$(dirname "$0")/../skills/goodesign" || exit 1
 fail=0
 
 # 1. every `dir/file.md` or `file.md` mentioned in backticks must exist
@@ -34,5 +34,5 @@ while read -r f; do
   grep -qE "$base" SKILL.md || { echo "NOT IN MAP   $f"; fail=1; }
 done < <(find . -name '*.md' ! -name SKILL.md | sort)
 
-[ $fail -eq 0 ] && echo "godesign: ok — $(find . -name '*.md' | wc -l | tr -d ' ') files, SKILL.md $lines lines"
+[ $fail -eq 0 ] && echo "goodesign: ok — $(find . -name '*.md' | wc -l | tr -d ' ') files, SKILL.md $lines lines"
 exit $fail

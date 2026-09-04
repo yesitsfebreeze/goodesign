@@ -1,34 +1,25 @@
 {
   "$schema": "https://code.claude.com/schemas/marketplace.json",
-  "name": "godesign",
+  "name": "goodesign",
   "owner": {
     "name": "yesitsfebreeze",
     "url": "https://github.com/yesitsfebreeze"
   },
   "metadata": {
-    "description": "godesign — the design authority as a Claude Code skill",
-    "version": "1.0.0"
+    "description": "goodesign — the design authority and the corporate-identity layer on top of it, as Claude Code skills",
+    "version": "1.1.0"
   },
   "plugins": [
     {
-      "name": "godesign",
+      "name": "goodesign",
       "source": "./",
-      "description": "One design skill with an index built for agents: atomic files per topic, read on demand. Flow, space, type, colour, states, motion, forms, copy; terminal UI; the Apple lineage; the AI-slop blacklist; review passes, a ship gate and a page audit; three wearable personas.",
-      "version": "1.0.0",
-      "author": {
-        "name": "yesitsfebreeze"
-      },
+      "description": "Three skills. goodesign: one design skill with an index built for agents — atomic files per topic, read on demand; flow, space, type, colour, states, motion, forms, copy; terminal UI; the Apple lineage; the AI-slop blacklist; review passes, a ship gate and a page audit; four wearable personas. diw-use-customer-identity: how a brand's own law rides on goodesign — precedence, the shape of a brand instance, a brand gate stacked on goodesign's, authoring an instance from a token home. manola-ci: the Manola brand as that instance.",
+      "version": "1.1.0",
+      "author": { "name": "yesitsfebreeze" },
       "category": "development",
       "keywords": [
-        "design",
-        "ux",
-        "ui",
-        "tui",
-        "design-review",
-        "typography",
-        "accessibility",
-        "design-system",
-        "personas"
+        "design", "ux", "ui", "tui", "design-review", "typography", "accessibility",
+        "design-system", "personas", "brand", "corporate-identity", "tokens"
       ]
     }
   ]

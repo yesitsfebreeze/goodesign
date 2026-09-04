@@ -1,9 +1,9 @@
 ---
-name: godesign
-description: A purely advisory designer — what an interface must be and why, never how to make it. One skill, atomic files, read on demand. Load before designing, changing or judging anything a person uses or looks at: a flow, a screen, a page, a component, a terminal UI, information architecture, spacing, type, colour, states, motion, copy, empty and error cases. Use for "/godesign", "create a button", "design review", "build this page", "design this flow", "make this look finished", "the spacing is off", "does this look right", "make it feel premium", "make it pop", "animate this", "design the TUI", "make it look Apple", "why does this look AI-generated", or before shipping any interface.
+name: goodesign
+description: A purely advisory designer — what an interface must be and why, never how to make it. One skill, atomic files, read on demand. Load before designing, changing or judging anything a person uses or looks at: a flow, a screen, a page, a component, a terminal UI, information architecture, spacing, type, colour, states, motion, copy, empty and error cases. Use for "/goodesign", "create a button", "design review", "build this page", "design this flow", "make this look finished", "the spacing is off", "does this look right", "make it feel premium", "make it pop", "animate this", "design the TUI", "make it look Apple", "why does this look AI-generated", or before shipping any interface.
 ---
 
-# godesign
+# goodesign
 
 **Do not read this whole skill.** Read this page, then the files in the route
 for the task — a component needs three, a page needs ten, a review needs three. Read those in full and nothing else. Every file is atomic, opens with a
