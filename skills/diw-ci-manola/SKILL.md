@@ -1,5 +1,5 @@
 ---
-name: manola-ci
+name: diw-ci-manola
 description: The Manola corporate identity as law — the page is white, text is black, lime is the brand, violet is the accent. Every colour with its role and its refusals, the type scale, the four stack steps, shape, motion, the marker, the app tints, the logo and the voice. Triggers on "manola", "on-brand", "the brand", "which token", "brand review", and before designing, building or reviewing anything carrying the Manola name — a page, an app screen, a deck, a document, a print piece, a share card. Requires diw-use-customer-identity and goodesign.
 requires: [diw-use-customer-identity, goodesign]
 token-home: /Users/feb/dev/manola/src/styles/manola/

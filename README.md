@@ -10,7 +10,7 @@ A designer, as a skill — and the corporate identity that rides on top of it.
 ```
 goodesign                   what an interface must be, and why       — the craft
   diw-use-customer-identity how a brand's law rides on top            — the protocol
-    manola-ci               the Manola brand, as that law             — an instance
+    diw-ci-manola             the Manola brand, as that law             — an instance
 ```
 
 ## goodesign
@@ -72,7 +72,7 @@ token home without inventing a value.
 | `gate.md` | the brand gate, stacked on goodesign's |
 | `authoring.md` | building a brand instance from a token home |
 
-## manola-ci
+## diw-ci-manola
 
 The Manola brand as an instance — colour, type, space, shape, motion, the
 marker, the app tints, the logo and the voice, read from `src/styles/manola/`
@@ -85,7 +85,7 @@ has to reconcile.
 `skills/diw-use-customer-identity/authoring.md`. Find the token home, read it
 whole, diff any prose against it, write the stance, write the eight sections in
 `shape.md`'s order, verify every value greps at the token home. A new instance
-is `skills/<brand>-ci/SKILL.md` plus at most `assets.md` and `open.md`.
+is `skills/diw-ci-<brand>/SKILL.md` plus at most `assets.md` and `open.md`.
 
 ## Check
 

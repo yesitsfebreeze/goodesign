@@ -86,7 +86,7 @@ That works but means two Wrens drifting.
 
 **To close, one of:** (a) keep both, accept drift; (b) replace
 `.claude/skills/designer/` with a two-line skill that says "load goodesign,
-wear `lead`, then load manola-ci" and point `AGENTS.md` at it; (c) delete it
+wear `lead`, then load diw-ci-manola" and point `AGENTS.md` at it; (c) delete it
 and rely on the plugin being installed. (b) is the smallest change that ends
 the drift.
 

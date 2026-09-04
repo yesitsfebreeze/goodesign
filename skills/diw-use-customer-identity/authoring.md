@@ -1,7 +1,7 @@
 # Authoring a brand instance
 
 **Read when:** a brand has a token home, a guide, a stylesheet or a brand book
-and no `<brand>-ci` skill yet — and you are about to write one.
+and no `diw-ci-<brand>` skill yet — and you are about to write one.
 
 A CI skill is **read out of the product, never written into it.** The brand
 decided its values somewhere; the skill's job is to find that place, state

@@ -1,9 +1,9 @@
 # The shape of a brand instance
 
-**Read when:** checking whether a `<brand>-ci` skill is complete, writing one,
+**Read when:** checking whether a `diw-ci-<brand>` skill is complete, writing one,
 or resolving a disagreement between the brand and goodesign.
 
-A brand instance is one skill, named `<brand>-ci`, that `requires: diw-use-customer-identity`. It
+A brand instance is one skill, named `diw-ci-<brand>`, that `requires: diw-use-customer-identity`. It
 is read almost whole whenever anything on-brand is designed — colour, type and
 space apply at once — so unlike goodesign it is **not** split into many atomic
 files. One `SKILL.md` carries the law; at most two companions carry what is
@@ -13,7 +13,7 @@ read rarely.
 
 ```yaml
 ---
-name: <brand>-ci
+name: diw-ci-<brand>
 description: <one line: the brand, in its own stance; then "Requires diw-use-customer-identity and goodesign.">
 requires: [diw-use-customer-identity, goodesign]
 token-home: <path to the directory where values are decided>
