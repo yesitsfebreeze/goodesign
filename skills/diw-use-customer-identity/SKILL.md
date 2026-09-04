@@ -1,6 +1,7 @@
 ---
 name: diw-use-customer-identity
-description: The corporate identity layer that sits on top of goodesign — a brand's own law, in the shape goodesign already knows how to obey. Load before designing, building or reviewing anything that carries a brand: a page, an app screen, a deck, a document, a print piece, an email, a slide template. Use for "/diw-use-customer-identity", "on-brand", "which token", "is this on brand", "brand review", "apply the CI", "build a CI skill", "the brand says", or whenever a named brand and a design question meet. Requires the goodesign skill.
+description: The corporate identity layer that sits on top of goodesign — a brand's own law, in the shape goodesign already knows how to obey. Takes a customer name and loads that customer's diw-ci-<customer> skill. Load before designing, building or reviewing anything that carries a brand: a page, an app screen, a deck, a document, a print piece, an email, a slide template. Use for "/diw-use-customer-identity <customer>", "use the manola CI", "on-brand", "which token", "is this on brand", "brand review", "apply the CI", "build a CI skill", "the brand says", or whenever a named brand and a design question meet. Requires the goodesign skill.
+argument-hint: <customer>
 ---
 
 # diw-use-customer-identity — the CI layer
@@ -13,6 +14,31 @@ say so in one line and stop — do not improvise the design half.
 
 **Do not read this whole skill.** Read this page, then the one file the task
 needs. Every file opens with a **Read when** line.
+
+---
+
+## Invocation — `/diw-use-customer-identity <customer>`
+
+`$ARGUMENTS` is the customer. The instance is the skill named
+**`diw-ci-<customer>`**, and the first job is to find it and load it:
+
+1. Try the Skill tool with `diw-ci-$ARGUMENTS` exactly.
+2. Not listed → glob `**/skills/diw-ci-*/SKILL.md` across the project's
+   `.claude/skills/`, `~/.claude/skills/`, and the installed plugin caches
+   under `~/.claude/plugins/`. Collect every `diw-ci-*` name found.
+3. Exact match → load it. No exact match but one name is within an obvious
+   misspelling (`mannla` → `manola`) → load it and say so in one line.
+   Several candidates → list them and ask. None → list what was found (or
+   that nothing was), and offer `authoring.md` to build one.
+4. Then load `goodesign` if it is not loaded, and continue with the task
+   under the precedence below.
+
+No argument: read the customer off the project — `CLAUDE.md`, the package
+name, the repo name — and confirm the guess in one line before loading. If
+nothing names a customer, list the `diw-ci-*` skills available and ask.
+
+The instance is loaded *whole*; it is read almost entirely for any on-brand
+task (`shape.md`).
 
 ---
 
